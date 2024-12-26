@@ -9,12 +9,12 @@ import { useParams } from "next/navigation";
 import { useState, useTransition } from "react";
 
 const languages = [
+  { id: "sr", icon: <SerbianFlag className="h-5 w-5" /> },
   { id: "en", icon: <EnglishFlag className="h-5 w-5" /> },
   {
     id: "ru",
     icon: <RussianFlag className="h-5 w-5" />,
   },
-  { id: "sr", icon: <SerbianFlag className="h-5 w-5" /> },
 ];
 
 export const LangSwitcher = () => {
@@ -24,19 +24,6 @@ export const LangSwitcher = () => {
   const pathname = usePathname();
   const params = useParams();
   const localActive = useLocale();
-
-  // function onSelectSwitch(event: ChangeEvent<HTMLSelectElement>) {
-  //   const nextLocale = event.target.value;
-  //   startTransition(() => {
-  //     router.replace(
-  //       // @ts-expect-error -- TypeScript will validate that only known `params`
-  //       // are used in combination with a given `pathname`. Since the two will
-  //       // always match for the current route, we can skip runtime checks.
-  //       { pathname, params },
-  //       { locale: nextLocale },
-  //     );
-  //   });
-  // }
 
   const currentLanguage = languages.find((lang) => lang.id === localActive);
 
@@ -54,24 +41,6 @@ export const LangSwitcher = () => {
   };
 
   return (
-    // <label>
-    //   <select
-    //     defaultValue={localActive}
-    //     onChange={onSelectSwitch}
-    //     disabled={isPending}
-    //   >
-    //     <option value="en" disabled={localActive === "en"}>
-    //       English
-    //     </option>
-    //     <option value="ru" disabled={localActive === "ru"}>
-    //       Russian
-    //     </option>
-    //     <option value="sr" disabled={localActive === "sr"}>
-    //       Serbian
-    //     </option>
-    //   </select>
-    // </label>
-
     <div className="relative inline-block">
       <button
         className="flex h-8 w-12 items-center justify-center gap-2 rounded-full bg-blck p-1 dark:bg-wht"
@@ -82,13 +51,13 @@ export const LangSwitcher = () => {
       </button>
 
       {isOpen && (
-        <ul className="absolute left-0 mt-2 w-40 rounded border bg-white shadow-lg">
+        <ul className="absolute left-0 mt-2 w-12 rounded bg-blck shadow-lg dark:bg-wht">
           {languages.map((language) => (
             <li
               key={language.id}
-              className={`flex cursor-pointer items-center gap-2 px-4 py-2 hover:bg-gray-100 ${
+              className={`flex h-8 cursor-pointer items-center justify-center gap-2 p-1 transition-colors hover:bg-wht dark:hover:bg-blck ${
                 localActive === language.id
-                  ? "cursor-not-allowed text-gray-400"
+                  ? "pointer-events-none bg-gray-500"
                   : ""
               }`}
               onClick={() =>

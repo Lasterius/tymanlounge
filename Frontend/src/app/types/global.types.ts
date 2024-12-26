@@ -3,3 +3,5 @@ export interface IPicture {
   documentId: string;
   url: string;
 }
+
+export type Locale = "en" | "ru" | "sr";

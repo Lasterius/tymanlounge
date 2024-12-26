@@ -4,10 +4,11 @@ import { ReactNode } from "react";
 
 import { routing } from "@/i18n/routing";
 import { BaseLayout } from "@/widgets/layout/baseLayout";
+import { Locale } from "../types/global.types";
 
 type Props = {
   children: ReactNode;
-  params: { locale: string };
+  params: { locale: Locale };
 };
 
 export function generateStaticParams() {
@@ -29,7 +30,7 @@ export default async function LocaleLayout({
   params: { locale },
 }: Props) {
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale)) {
     notFound();
   }
 
