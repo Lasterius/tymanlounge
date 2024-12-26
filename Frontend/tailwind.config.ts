@@ -1,16 +1,19 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  darkMode: "class",
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        blck: "#020705",
+        drkgrn: "#092017",
+        grn: "#355E3B",
+        wht: "#EFF7EE",
+        rng: "#D95706",
+      },
+      fontFamily: {
+        heading: "var(--font-rubik)",
       },
     },
   },
