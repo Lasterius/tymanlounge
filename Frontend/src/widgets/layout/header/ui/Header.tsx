@@ -2,6 +2,7 @@ import { LogoBlackFull } from "@/shared/icons/LogoBlackFull";
 import { LangSwitcher } from "@/shared/langSwitcher";
 import { ThemeToggle } from "@/shared/themeToggle";
 import Link from "next/link";
+import { BurgerMenu } from "./BurgerMenu";
 
 export const Header = () => {
   return (
@@ -12,9 +13,7 @@ export const Header = () => {
       <div className="flex items-center justify-center gap-2">
         <LangSwitcher />
         <ThemeToggle />
-        <nav>
-          <div className="text-wht">Burger</div>
-        </nav>
+        <BurgerMenu />
       </div>
     </header>
   );

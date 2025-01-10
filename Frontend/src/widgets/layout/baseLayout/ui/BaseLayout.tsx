@@ -31,8 +31,18 @@ type Props = {
 export default async function BaseLayout({ children, locale }: Props) {
   const messages = await getMessages();
 
+  const themeScript = `
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.classList.add(theme);
+    })();
+  `;
+
   return (
     <html lang={locale}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className={`${roboto.className} ${rubikMonoOne.variable} text-lg`}>
         <NextIntlClientProvider messages={messages}>
           <Header />

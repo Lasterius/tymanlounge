@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 import { routing } from "@/i18n/routing";
 import { BaseLayout } from "@/widgets/layout/baseLayout";
-import { Locale } from "../types/global.types";
+import { Locale } from "../../shared/config/types/global.types";
 
 type Props = {
   children: ReactNode;

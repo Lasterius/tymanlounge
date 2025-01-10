@@ -1,25 +1,25 @@
 "use client";
 
 import { usePathname, useRouter } from "@/i18n/routing";
+import { languages } from "@/shared/config/constants";
 import { EnglishFlag } from "@/shared/icons/EnglishFlag";
 import { RussianFlag } from "@/shared/icons/RussianFlag";
 import { SerbianFlag } from "@/shared/icons/SerbianFlag";
 import { useLocale } from "next-intl";
 import { useParams } from "next/navigation";
-import { useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 
-const languages = [
-  { id: "sr", icon: <SerbianFlag className="h-5 w-5" /> },
-  { id: "en", icon: <EnglishFlag className="h-5 w-5" /> },
-  {
-    id: "ru",
-    icon: <RussianFlag className="h-5 w-5" />,
-  },
-];
+const flagIcons: Record<string, JSX.Element> = {
+  sr: <SerbianFlag className="h-5 w-5" />,
+  en: <EnglishFlag className="h-5 w-5" />,
+  ru: <RussianFlag className="h-5 w-5" />,
+};
 
 export const LangSwitcher = () => {
   const [isPending, startTransition] = useTransition();
   const [isOpen, setIsOpen] = useState(false);
+  const switcherRef = useRef<HTMLDivElement>(null);
+
   const router = useRouter();
   const pathname = usePathname();
   const params = useParams();
@@ -40,14 +40,35 @@ export const LangSwitcher = () => {
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        switcherRef.current &&
+        !switcherRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
-    <div className="relative inline-block">
+    <div className="relative inline-block" ref={switcherRef}>
       <button
         className="flex h-8 w-12 items-center justify-center gap-2 rounded-full bg-blck p-1 dark:bg-wht"
         onClick={() => setIsOpen(!isOpen)}
         disabled={isPending}
       >
-        {currentLanguage?.icon}
+        {flagIcons[currentLanguage?.id || "en"]}
       </button>
 
       {isOpen && (
@@ -64,7 +85,7 @@ export const LangSwitcher = () => {
                 localActive !== language.id && handleSelect(language.id)
               }
             >
-              {language.icon}
+              {flagIcons[language.id]}
             </li>
           ))}
         </ul>

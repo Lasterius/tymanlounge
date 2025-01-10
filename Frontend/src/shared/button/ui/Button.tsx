@@ -1,4 +1,4 @@
-import { IButtonProps } from "@/app/types/ui.types";
+import { IButtonProps } from "@/shared/config/types/ui.types";
 
 export const Button = ({ children, className, onClick }: IButtonProps) => {
   return (

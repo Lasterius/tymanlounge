@@ -14,5 +14,14 @@
 
   "AffichePage": {
     "buttonLoad": "Загрузить еще"
+  },
+
+  "BurgerMenu": {
+    "home": "Главная",
+    "menu": "Меню",
+    "affiche": "Афиша",
+    "gallery": "Галерея",
+    "team": "Команда",
+    "contacts": "Контакты"
   }
 }

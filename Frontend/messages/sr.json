@@ -14,5 +14,14 @@
 
   "AffichePage": {
     "buttonLoad": "Учитај више"
+  },
+
+  "BurgerMenu": {
+    "home": "Почетна",
+    "menu": "Мени",
+    "affiche": "Постер",
+    "gallery": "Галерија",
+    "team": "Тим",
+    "contacts": "Контакти"
   }
 }
