@@ -3,6 +3,7 @@
 import { navItems } from "@/shared/config/constants";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 export const BurgerMenu = () => {
@@ -10,6 +11,7 @@ export const BurgerMenu = () => {
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
+  const pathname = usePathname();
   const t = useTranslations("BurgerMenu");
 
   const toggleMenu = () => {
@@ -38,8 +40,12 @@ export const BurgerMenu = () => {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
   return (
-    <div className="relative">
+    <div className="relative xl:hidden">
       <button
         ref={buttonRef}
         onClick={toggleMenu}

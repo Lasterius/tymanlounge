@@ -5,3 +5,8 @@ export interface IPicture {
 }
 
 export type Locale = "en" | "ru" | "sr";
+
+export interface BaseResponse<T> {
+  data: T;
+  meta: object;
+}

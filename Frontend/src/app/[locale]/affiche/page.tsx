@@ -1,7 +1,8 @@
+import { BaseResponse } from "@/shared/config/types/global.types";
 import { AfficheList } from "@/widgets/afficheList";
 import Image from "next/image";
 import { strapiFetch } from "../../api/route";
-import { IBlock } from "./libs/affiche.types";
+import { AfficheData, AfficheItem } from "./libs/affiche.types";
 import { AffichePageRoute } from "./libs/routes";
 
 const Affiche = async ({
@@ -11,10 +12,10 @@ const Affiche = async ({
 }) => {
   const AffichePageUrl: string = AffichePageRoute(locale);
   const strapiUrl = process.env.STRAPI_URL;
-  const apiData = await strapiFetch(AffichePageUrl);
+  const apiData: BaseResponse<AfficheData> = await strapiFetch(AffichePageUrl);
   const { blocks } = apiData.data;
-  const upcomingBlock: IBlock = blocks.at(-1);
-  const reversedBlocks: IBlock[] = blocks.slice(0, -1).reverse();
+  const upcomingBlock: AfficheItem | undefined = blocks.at(-1);
+  const reversedBlocks: AfficheItem[] = blocks.slice(0, -1).reverse();
 
   return (
     <>
@@ -23,14 +24,14 @@ const Affiche = async ({
           <h3 className="mb-8 border-b border-solid border-grn">
             Upcoming event
           </h3>
-          <h2>{upcomingBlock.name}</h2>
-          <p className="italic">{upcomingBlock.date}</p>
-          <p>{upcomingBlock.description}</p>
+          <h2>{upcomingBlock?.name}</h2>
+          <p className="italic">{upcomingBlock?.date}</p>
+          <p>{upcomingBlock?.description}</p>
         </div>
         <div className="relative z-10 h-screen w-1/2">
           <Image
-            alt={upcomingBlock.name}
-            src={`${strapiUrl}${upcomingBlock.picture.url}`}
+            alt={upcomingBlock?.name || "upcoming event"}
+            src={`${strapiUrl}${upcomingBlock?.picture.url}`}
             fill
             sizes="50vw"
             className="object-cover"

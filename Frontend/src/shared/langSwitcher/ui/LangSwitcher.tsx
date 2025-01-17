@@ -64,11 +64,13 @@ export const LangSwitcher = () => {
   return (
     <div className="relative inline-block" ref={switcherRef}>
       <button
-        className="flex h-8 w-12 items-center justify-center gap-2 rounded-full bg-blck p-1 dark:bg-wht"
+        className="group flex h-8 w-12 items-center justify-center gap-2 rounded-full bg-blck p-1 dark:bg-wht"
         onClick={() => setIsOpen(!isOpen)}
         disabled={isPending}
       >
-        {flagIcons[currentLanguage?.id || "en"]}
+        <div className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+          {flagIcons[currentLanguage?.id || "en"]}
+        </div>
       </button>
 
       {isOpen && (

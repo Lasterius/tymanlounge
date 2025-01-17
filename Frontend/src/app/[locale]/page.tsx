@@ -1,13 +1,11 @@
 import { Link } from "@/i18n/routing";
 import { Button } from "@/shared/button";
+import { BaseResponse } from "@/shared/config/types/global.types";
 import { LogoBlackFull } from "@/shared/icons/LogoBlackFull";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
-import {
-  IApiDataResponse,
-  IBlock,
-} from "../../shared/config/types/home-page.types";
 import { strapiFetch } from "../api/route";
+import { HomeData, HomeItem } from "../libs/home-page.types";
 import { HomePageRoute } from "../libs/routes";
 
 const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
@@ -16,8 +14,8 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
   setRequestLocale(locale);
 
   const t = await getTranslations("HomePage");
-  const apiData: IApiDataResponse = await strapiFetch(HomePageUrl);
-  const { mainDescription, blocks, mainPicture } = apiData.data;
+  const apiData: BaseResponse<HomeData> = await strapiFetch(HomePageUrl);
+  const { mainDescription, blocks, mainPicture } = apiData.data || {};
   return (
     <>
       <div className="relative z-0 h-screen w-full overflow-hidden">
@@ -36,7 +34,7 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
           </p>
         </div>
       </div>
-      {blocks.map((block: IBlock) => (
+      {blocks.map((block: HomeItem) => (
         <div
           className={`flex ${block.id % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
           key={block.id}

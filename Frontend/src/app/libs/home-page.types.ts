@@ -1,6 +1,6 @@
 import { IPicture } from "@/shared/config/types/global.types";
 
-export interface IBlock {
+export interface HomeItem {
   id: number;
   title: string;
   description: string;
@@ -8,12 +8,7 @@ export interface IBlock {
   picture: IPicture;
 }
 
-export interface IApiDataResponse {
-  data: IData;
-  meta: object;
-}
-
-export interface IData {
+export interface HomeData {
   id: number;
   documentId: string;
   createdAt: string;
@@ -21,6 +16,6 @@ export interface IData {
   publishedAt: string;
   locale: string;
   mainDescription: string;
-  blocks: IBlock[];
+  blocks: HomeItem[];
   mainPicture: IPicture;
 }

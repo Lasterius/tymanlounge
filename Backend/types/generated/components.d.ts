@@ -8,7 +8,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
     description: '';
   };
   attributes: {
-    files: Schema.Attribute.Media<'images', true>;
+    files: Schema.Attribute.Media<'images'>;
   };
 }
 
