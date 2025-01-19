@@ -22,6 +22,10 @@ export async function generateMetadata({
 
   return {
     title: t("title"),
+    description: "The best lounge bar ever",
+    icons: {
+      icon: "/favicon.png",
+    },
   };
 }
 

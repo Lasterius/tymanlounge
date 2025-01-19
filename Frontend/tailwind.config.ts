@@ -7,13 +7,14 @@ const config: Config = {
     extend: {
       colors: {
         blck: "#020705",
-        drkgrn: "#092017",
-        grn: "#355E3B",
+        drkgrn: "#355E3B",
+        grn: "#4a9e57",
         wht: "#EFF7EE",
-        rng: "#D95706",
+        gr: "#6b7280",
       },
       fontFamily: {
         heading: "var(--font-rubik)",
+        mainPicture: "var(--font-eb-garamond)",
       },
     },
   },

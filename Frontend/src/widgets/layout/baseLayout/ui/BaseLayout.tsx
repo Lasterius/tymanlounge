@@ -1,8 +1,9 @@
 import "@/app/globals.css";
+import { Footer } from "@/widgets/layout/footer";
 import { Header } from "@/widgets/layout/header";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { Roboto, Rubik_Mono_One } from "next/font/google";
+import { EB_Garamond, Roboto, Rubik_Mono_One } from "next/font/google";
 
 const rubikMonoOne = Rubik_Mono_One({
   weight: "400",
@@ -15,13 +16,19 @@ const roboto = Roboto({
   subsets: ["latin", "cyrillic"],
 });
 
-export const metadata = {
-  title: "Tyman Lounge",
-  description: "The best lounge bar ever",
-  icons: {
-    icon: "/favicon.png",
-  },
-};
+const garamond = EB_Garamond({
+  weight: ["400", "700"],
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-eb-garamond",
+});
+
+// export const metadata = {
+//   title: "Tyman Lounge",
+//   description: "The best lounge bar ever",
+//   icons: {
+//     icon: "/favicon.png",
+//   },
+// };
 
 type Props = {
   children: React.ReactNode;
@@ -43,12 +50,15 @@ export default async function BaseLayout({ children, locale }: Props) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className={`${roboto.className} ${rubikMonoOne.variable} text-lg`}>
+      <body
+        className={`${roboto.className} ${rubikMonoOne.variable} ${garamond.variable} text-lg`}
+      >
         <NextIntlClientProvider messages={messages}>
           <Header />
-          <main className="bg-wht text-blck dark:bg-blck dark:text-wht">
+          <main className="min-h-[calc(100vh-208px)] bg-wht text-blck dark:bg-blck dark:text-wht">
             {children}
           </main>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -21,7 +21,7 @@ const Affiche = async ({
     <>
       <div className="flex h-screen w-full">
         <div className="flex w-1/2 flex-col items-start justify-center gap-5 px-28 py-32">
-          <h3 className="mb-8 border-b border-solid border-grn">
+          <h3 className="mb-8 border-b-4 border-solid border-drkgrn dark:border-grn">
             Upcoming event
           </h3>
           <h2>{upcomingBlock?.name}</h2>

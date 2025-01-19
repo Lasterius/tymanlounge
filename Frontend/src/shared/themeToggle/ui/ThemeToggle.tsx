@@ -25,11 +25,11 @@ export const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="group relative flex h-8 w-16 items-center rounded-full bg-blck p-1 transition-colors duration-300 dark:bg-wht"
+      className="group relative flex h-8 w-16 items-center rounded-full bg-wht p-1 transition-colors duration-300"
     >
-      <Sun className="absolute left-1 h-5 w-5 text-blck transition-opacity duration-300" />
+      <Sun className="absolute left-2 h-5 w-5 text-blck transition-opacity duration-300" />
 
-      <Moon className="absolute right-1 h-5 w-5 text-wht transition-opacity duration-300" />
+      <Moon className="absolute right-2 h-5 w-5 text-blck transition-opacity duration-300" />
 
       <span
         className={`absolute h-6 w-6 transform rounded-full bg-blck shadow-md ring-2 ring-wht transition-transform duration-300 dark:bg-wht dark:ring-blck ${

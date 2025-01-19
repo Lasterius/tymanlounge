@@ -85,7 +85,11 @@ export interface SharedAfficheItem extends Struct.ComponentSchema {
   };
   attributes: {
     name: Schema.Attribute.String & Schema.Attribute.Required;
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 140;
+      }>;
     date: Schema.Attribute.String & Schema.Attribute.Required;
     picture: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
   };

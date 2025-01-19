@@ -1,6 +1,6 @@
 "use client";
 
-import { IBlock } from "@/app/[locale]/affiche/libs/affiche.types";
+import { AfficheItem } from "@/app/[locale]/affiche/libs/affiche.types";
 import { Button } from "@/shared/button";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -10,7 +10,7 @@ export const AfficheList = ({
   blocks,
   strapiUrl,
 }: {
-  blocks: IBlock[];
+  blocks: AfficheItem[];
   strapiUrl: string | undefined;
 }) => {
   const [visibleCount, setVisibleCount] = useState(5);
@@ -24,7 +24,7 @@ export const AfficheList = ({
 
   return (
     <ul className="grid grid-cols-3">
-      {visibleBlocks.map((block: IBlock) => (
+      {visibleBlocks.map((block: AfficheItem) => (
         <li key={block.id} className="relative h-[50vh]">
           <Image
             alt={block.name}

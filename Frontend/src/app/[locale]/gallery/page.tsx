@@ -11,7 +11,7 @@ const Gallery = async () => {
   const { Pictures } = apiData.data;
 
   return (
-    <div className="mt-14">
+    <div className="pt-14">
       <GalleryList pictures={Pictures} strapiUrl={strapiUrl} />
     </div>
   );

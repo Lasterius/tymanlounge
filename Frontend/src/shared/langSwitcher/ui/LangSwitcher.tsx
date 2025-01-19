@@ -64,7 +64,7 @@ export const LangSwitcher = () => {
   return (
     <div className="relative inline-block" ref={switcherRef}>
       <button
-        className="group flex h-8 w-12 items-center justify-center gap-2 rounded-full bg-blck p-1 dark:bg-wht"
+        className="group flex h-8 w-12 items-center justify-center gap-2 rounded-full bg-wht p-1"
         onClick={() => setIsOpen(!isOpen)}
         disabled={isPending}
       >
@@ -74,14 +74,12 @@ export const LangSwitcher = () => {
       </button>
 
       {isOpen && (
-        <ul className="absolute left-0 mt-2 w-12 rounded bg-blck shadow-lg dark:bg-wht">
+        <ul className="absolute left-0 mt-2 w-12 rounded bg-wht shadow-lg">
           {languages.map((language) => (
             <li
               key={language.id}
-              className={`flex h-8 cursor-pointer items-center justify-center gap-2 p-1 transition-colors hover:bg-wht dark:hover:bg-blck ${
-                localActive === language.id
-                  ? "pointer-events-none bg-gray-500"
-                  : ""
+              className={`flex h-8 cursor-pointer items-center justify-center gap-2 p-1 transition-colors hover:bg-blck ${
+                localActive === language.id ? "pointer-events-none bg-grn" : ""
               }`}
               onClick={() =>
                 localActive !== language.id && handleSelect(language.id)
