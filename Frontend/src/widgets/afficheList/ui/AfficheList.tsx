@@ -2,22 +2,22 @@
 
 import { AfficheItem } from "@/app/[locale]/affiche/libs/affiche.types";
 import { Button } from "@/shared/button";
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
 
 export const AfficheList = ({
   blocks,
   strapiUrl,
+  buttonText,
 }: {
   blocks: AfficheItem[];
   strapiUrl: string | undefined;
+  buttonText: string;
 }) => {
   const [visibleCount, setVisibleCount] = useState(5);
   const loadMore = () => {
     setVisibleCount((prev) => prev + 6);
   };
-  const t = useTranslations("AffichePage");
 
   const visibleBlocks = blocks.slice(0, visibleCount);
   const hasMore = visibleCount < blocks.length;
@@ -43,7 +43,7 @@ export const AfficheList = ({
         </li>
       ))}
       <li className="relative flex h-[50vh] items-center justify-center">
-        {hasMore ? <Button onClick={loadMore}>{t("buttonLoad")}</Button> : ""}
+        {hasMore ? <Button onClick={loadMore}>{buttonText}</Button> : ""}
       </li>
     </ul>
   );

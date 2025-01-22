@@ -1,4 +1,4 @@
-import { strapiFetch } from "@/app/api/route";
+import { strapiFetch } from "@/app/api/strapiFetch";
 import { BaseResponse } from "@/shared/config/types/global.types";
 import { GalleryList } from "@/widgets/galleryList";
 import { GalleryData } from "./libs/gallery.types";

@@ -4,16 +4,18 @@
   },
 
   "NotFoundPage": {
-    "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
+    "description": "Please double-check the browser address bar or use the navigation to go to a known page",
     "title": "Page not found"
   },
 
   "HomePage": {
-    "buttonRead": "Read More"
+    "buttonRead": "Read More",
+    "reserve": "Reserve"
   },
 
   "AffichePage": {
-    "buttonLoad": "Load More"
+    "buttonLoad": "Load More",
+    "event": "Upcoming event"
   },
 
   "BurgerMenu": {
@@ -22,5 +24,10 @@
     "affiche": "Affiche",
     "gallery": "Gallery",
     "team": "Team"
+  },
+
+  "Footer": {
+    "weekdays": "Sun — Thu",
+    "weekend": "Fri — Sat"
   }
 }

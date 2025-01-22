@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_working_times",
+  "info": {
+    "displayName": "workingTime",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "weekdayStart": {
+      "type": "time",
+      "required": true
+    },
+    "weekdayFinish": {
+      "type": "time",
+      "required": true
+    },
+    "weekendStart": {
+      "type": "time",
+      "required": true
+    },
+    "weekendFinish": {
+      "type": "time",
+      "required": true
+    }
+  }
+}

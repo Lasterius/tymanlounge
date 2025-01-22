@@ -4,16 +4,18 @@
   },
 
   "NotFoundPage": {
-    "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
-    "title": "Page not found"
+    "description": "Пожалуйста, проверьте адресную строку браузера или используйте навигацию, чтобы перейти на известную страницу",
+    "title": "Страница не найдена"
   },
 
   "HomePage": {
-    "buttonRead": "Подробнее"
+    "buttonRead": "Подробнее",
+    "reserve": "Бронь"
   },
 
   "AffichePage": {
-    "buttonLoad": "Загрузить еще"
+    "buttonLoad": "Загрузить еще",
+    "event": "Ближайшее событие"
   },
 
   "BurgerMenu": {
@@ -22,5 +24,10 @@
     "affiche": "Афиша",
     "gallery": "Галерея",
     "team": "Команда"
+  },
+
+  "Footer": {
+    "weekdays": "Вс — Чт",
+    "weekend": "Пт — Сб"
   }
 }

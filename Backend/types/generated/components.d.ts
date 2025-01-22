@@ -1,5 +1,19 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
+export interface SharedWorkingTime extends Struct.ComponentSchema {
+  collectionName: 'components_shared_working_times';
+  info: {
+    displayName: 'workingTime';
+    icon: 'clock';
+  };
+  attributes: {
+    weekdayStart: Schema.Attribute.Time & Schema.Attribute.Required;
+    weekdayFinish: Schema.Attribute.Time & Schema.Attribute.Required;
+    weekendStart: Schema.Attribute.Time & Schema.Attribute.Required;
+    weekendFinish: Schema.Attribute.Time & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
@@ -51,6 +65,19 @@ export interface SharedQuote extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedNameAndLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_name_and_links';
+  info: {
+    displayName: 'NameAndLink';
+    icon: 'twitter';
+    description: '';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -98,10 +125,12 @@ export interface SharedAfficheItem extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.working-time': SharedWorkingTime;
       'shared.slider': SharedSlider;
       'shared.seo': SharedSeo;
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
+      'shared.name-and-link': SharedNameAndLink;
       'shared.media': SharedMedia;
       'shared.main-item': SharedMainItem;
       'shared.affiche-item': SharedAfficheItem;

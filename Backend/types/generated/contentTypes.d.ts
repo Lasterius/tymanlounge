@@ -698,6 +698,44 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiGlobalDataGlobalData extends Struct.SingleTypeSchema {
+  collectionName: 'global_datas';
+  info: {
+    singularName: 'global-data';
+    pluralName: 'global-datas';
+    displayName: 'Global Data';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    workingTime: Schema.Attribute.Component<'shared.working-time', false> &
+      Schema.Attribute.Required;
+    instagram: Schema.Attribute.Component<'shared.name-and-link', false> &
+      Schema.Attribute.Required;
+    address: Schema.Attribute.Component<'shared.name-and-link', false>;
+    reservation: Schema.Attribute.Component<'shared.name-and-link', false> &
+      Schema.Attribute.Required;
+    menu: Schema.Attribute.Component<'shared.name-and-link', false> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::global-data.global-data'
+    > &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
@@ -1139,6 +1177,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::gallery-page.gallery-page': ApiGalleryPageGalleryPage;
       'api::global.global': ApiGlobalGlobal;
+      'api::global-data.global-data': ApiGlobalDataGlobalData;
       'api::home-page.home-page': ApiHomePageHomePage;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;

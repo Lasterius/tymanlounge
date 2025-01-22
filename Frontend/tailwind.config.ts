@@ -7,7 +7,7 @@ const config: Config = {
     extend: {
       colors: {
         blck: "#020705",
-        drkgrn: "#355E3B",
+        drkgrn: "#277C45",
         grn: "#4a9e57",
         wht: "#EFF7EE",
         gr: "#6b7280",

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_name_and_links",
+  "info": {
+    "displayName": "NameAndLink",
+    "icon": "twitter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

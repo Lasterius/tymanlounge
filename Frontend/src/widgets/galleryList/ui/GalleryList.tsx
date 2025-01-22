@@ -2,7 +2,7 @@
 
 import { IPictures } from "@/app/[locale]/gallery/libs/gallery.types";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export const GalleryList = ({
   pictures,
@@ -15,6 +15,7 @@ export const GalleryList = ({
   const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
   const [imageHeights, setImageHeights] = useState<number[]>([]);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
   const openModal = (index: number) => {
     setSelectedImageIndex(index);
@@ -32,17 +33,56 @@ export const GalleryList = ({
     }
   };
 
-  const goToNextImage = () => {
+  const goToNextImage = useCallback(() => {
     if (selectedImageIndex !== null) {
       setSelectedImageIndex((prevIndex) => (prevIndex + 1) % pictures.length);
     }
-  };
+  }, [selectedImageIndex, pictures.length]);
 
-  const goToPreviousImage = () => {
+  const goToPreviousImage = useCallback(() => {
     if (selectedImageIndex !== null) {
       setSelectedImageIndex(
         (prevIndex) => (prevIndex - 1 + pictures.length) % pictures.length,
       );
+    }
+  }, [selectedImageIndex, pictures.length]);
+
+  useEffect(() => {
+    if (isOpen) {
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "ArrowRight") {
+          goToNextImage();
+        } else if (e.key === "ArrowLeft") {
+          goToPreviousImage();
+        } else if (e.key === "Escape") {
+          closeModal();
+        }
+      };
+
+      document.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.removeEventListener("keydown", handleKeyDown);
+      };
+    }
+  }, [isOpen, goToNextImage, goToPreviousImage]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX !== null) {
+      const touchEndX = e.changedTouches[0].clientX;
+      const deltaX = touchEndX - touchStartX;
+
+      // Порог свайпа
+      if (deltaX > 50) {
+        goToPreviousImage();
+      } else if (deltaX < -50) {
+        goToNextImage();
+      }
+
+      setTouchStartX(null);
     }
   };
 
@@ -61,7 +101,7 @@ export const GalleryList = ({
       <div
         className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-3"
         style={{
-          gridAutoRows: "20px", // Базовая высота строки
+          gridAutoRows: "30px", // Базовая высота строки
         }}
       >
         {imagesLoaded &&
@@ -88,8 +128,10 @@ export const GalleryList = ({
       {/* Модальное окно */}
       {isOpen && selectedImageIndex !== null && (
         <div
-          className="fixed inset-0 z-[999] flex items-center justify-center bg-black bg-opacity-70"
+          className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-black bg-opacity-70"
           onClick={handleModalClick}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           <div className="relative max-w-screen-lg rounded-lg bg-white shadow-lg">
             <button
@@ -101,16 +143,7 @@ export const GalleryList = ({
             >
               ✕
             </button>
-            {/* Кнопка для перехода влево */}
-            <button
-              onClick={goToPreviousImage}
-              className="absolute left-4 top-1/2 -translate-y-1/2 transform p-2 text-4xl text-white transition-colors hover:text-grn"
-              style={{
-                textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
-              }}
-            >
-              ←
-            </button>
+
             {/* Картинка в модалке */}
             <Image
               src={`${strapiUrl}${pictures[selectedImageIndex].files.url}`}
@@ -119,10 +152,25 @@ export const GalleryList = ({
               height={600}
               className="h-full max-h-[95vh] w-full max-w-[95vw] object-contain"
             />
+          </div>
+
+          {/* Контейнер для кнопок перелистывания */}
+          <div className="absolute bottom-4 flex justify-between gap-8">
+            {/* Кнопка для перехода влево */}
+            <button
+              onClick={goToPreviousImage}
+              className="p-2 text-4xl text-white transition-colors hover:text-grn"
+              style={{
+                textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
+              }}
+            >
+              ←
+            </button>
+
             {/* Кнопка для перехода вправо */}
             <button
               onClick={goToNextImage}
-              className="absolute right-4 top-1/2 -translate-y-1/2 transform p-2 text-4xl text-white transition-colors hover:text-grn"
+              className="p-2 text-4xl text-white transition-colors hover:text-grn"
               style={{
                 textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
               }}

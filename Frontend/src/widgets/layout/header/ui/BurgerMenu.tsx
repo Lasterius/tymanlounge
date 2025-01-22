@@ -1,5 +1,6 @@
 "use client";
 
+import { useGlobalData } from "@/app/context/GlobalDataContext";
 import { navItems } from "@/shared/config/constants";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -14,6 +15,9 @@ export const BurgerMenu = () => {
   const pathname = usePathname();
   const [, , section] = pathname.split("/");
   const t = useTranslations("BurgerMenu");
+
+  const { globalData } = useGlobalData();
+  const { menu } = globalData || {};
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -83,7 +87,7 @@ export const BurgerMenu = () => {
             >
               {item.label === "menu" ? (
                 <a
-                  href={item.href}
+                  href={menu?.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-3xl font-bold uppercase"

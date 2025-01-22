@@ -4,7 +4,7 @@ import { BaseResponse } from "@/shared/config/types/global.types";
 import { LogoBlackFull } from "@/shared/icons/LogoBlackFull";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
-import { strapiFetch } from "../api/route";
+import { strapiFetch } from "../api/strapiFetch";
 import { HomeData, HomeItem } from "../libs/home-page.types";
 import { HomePageRoute } from "../libs/routes";
 
@@ -16,6 +16,7 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
   const t = await getTranslations("HomePage");
   const apiData: BaseResponse<HomeData> = await strapiFetch(HomePageUrl);
   const { mainDescription, blocks, mainPicture } = apiData.data || {};
+
   return (
     <>
       <div className="relative z-0 h-screen w-full overflow-hidden">
@@ -29,7 +30,7 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
         />
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
           <LogoBlackFull className="w-2/3 text-white shadow-lg" />
-          <p className="font-mainPicture relative mt-12 w-full px-4 text-center text-3xl font-bold uppercase tracking-widest text-white">
+          <p className="relative mt-12 w-full px-4 text-center font-mainPicture text-3xl font-bold uppercase tracking-widest text-white">
             {mainDescription}
           </p>
         </div>

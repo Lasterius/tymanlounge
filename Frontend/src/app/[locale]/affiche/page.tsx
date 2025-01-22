@@ -1,7 +1,8 @@
 import { BaseResponse } from "@/shared/config/types/global.types";
 import { AfficheList } from "@/widgets/afficheList";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-import { strapiFetch } from "../../api/route";
+import { strapiFetch } from "../../api/strapiFetch";
 import { AfficheData, AfficheItem } from "./libs/affiche.types";
 import { AffichePageRoute } from "./libs/routes";
 
@@ -16,13 +17,14 @@ const Affiche = async ({
   const { blocks } = apiData.data;
   const upcomingBlock: AfficheItem | undefined = blocks.at(-1);
   const reversedBlocks: AfficheItem[] = blocks.slice(0, -1).reverse();
+  const t = await getTranslations("AffichePage");
 
   return (
     <>
       <div className="flex h-screen w-full">
         <div className="flex w-1/2 flex-col items-start justify-center gap-5 px-28 py-32">
           <h3 className="mb-8 border-b-4 border-solid border-drkgrn dark:border-grn">
-            Upcoming event
+            {t("event")}
           </h3>
           <h2>{upcomingBlock?.name}</h2>
           <p className="italic">{upcomingBlock?.date}</p>
@@ -59,7 +61,11 @@ const Affiche = async ({
           </li>
         ))}
       </ul> */}
-      <AfficheList blocks={reversedBlocks} strapiUrl={strapiUrl} />
+      <AfficheList
+        blocks={reversedBlocks}
+        strapiUrl={strapiUrl}
+        buttonText={t("buttonLoad")}
+      />
     </>
   );
 };

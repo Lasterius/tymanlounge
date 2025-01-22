@@ -4,23 +4,30 @@
   },
 
   "NotFoundPage": {
-    "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
-    "title": "Page not found"
+    "description": "Molimo vas da proverite adresnu traku pregledača ili koristite navigaciju da odete na poznatu stranicu",
+    "title": "Stranica nije pronađena"
   },
 
   "HomePage": {
-    "buttonRead": "Више детаља"
+    "buttonRead": "Više detalja",
+    "reserve": "Rezervacija"
   },
 
   "AffichePage": {
-    "buttonLoad": "Учитај више"
+    "buttonLoad": "Učitaj više",
+    "event": "Predstojeći događaj"
   },
 
   "BurgerMenu": {
-    "home": "Почетна",
-    "menu": "Мени",
-    "affiche": "Постер",
-    "gallery": "Галерија",
-    "team": "Тим"
+    "home": "Početna",
+    "menu": "Meni",
+    "affiche": "Poster",
+    "gallery": "Galerija",
+    "team": "Tim"
+  },
+
+  "Footer": {
+    "weekdays": "Ned — Čet",
+    "weekend": "Pet — Sub"
   }
 }
