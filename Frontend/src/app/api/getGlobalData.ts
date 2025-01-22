@@ -1,6 +1,6 @@
+import { GlobalDataRoute } from "@/shared/config/apiPaths";
 import { BaseResponse, GlobalData } from "@/shared/config/types/global.types";
-import { GlobalDataRoute } from "../libs/routes";
-import { strapiFetch } from "./strapiFetch";
+import { strapiFetch } from "../../shared/services/strapiFetch";
 
 export const getGlobalData = async (): Promise<BaseResponse<GlobalData>> => {
   const globalDataUrl: string = GlobalDataRoute();

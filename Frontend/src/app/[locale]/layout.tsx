@@ -22,10 +22,14 @@ export async function generateMetadata({
 
   return {
     title: t("title"),
-    description: "The best lounge bar ever",
+    description:
+      "Welcome to Tyman Hookah Lounge Bar in Belgrade, Serbia. With over 300 hookah flavors and an extensive collection of cocktails and beverages, we offer a unique and relaxing experience for every guest.",
     icons: {
       icon: "/favicon.png",
     },
+    robots: "index, follow",
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}`,
+    keywords: "hookah, shisha, lounge, bar, belgrade, serbia",
   };
 }
 

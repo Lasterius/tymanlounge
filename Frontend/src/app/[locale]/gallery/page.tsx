@@ -1,14 +1,12 @@
-import { strapiFetch } from "@/app/api/strapiFetch";
 import { BaseResponse } from "@/shared/config/types/global.types";
 import { GalleryList } from "@/widgets/galleryList";
+import { getGalleryPageData } from "./api/getGalleryPageData";
 import { GalleryData } from "./libs/gallery.types";
-import { GalleryPageRoute } from "./libs/routes";
 
 const Gallery = async () => {
-  const GalleryPageUrl: string = GalleryPageRoute();
-  const strapiUrl = process.env.STRAPI_URL;
-  const apiData: BaseResponse<GalleryData> = await strapiFetch(GalleryPageUrl);
+  const apiData: BaseResponse<GalleryData> = await getGalleryPageData();
   const { Pictures } = apiData.data;
+  const strapiUrl = process.env.STRAPI_URL;
 
   return (
     <div className="pt-14">

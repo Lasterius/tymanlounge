@@ -2,22 +2,20 @@ import { BaseResponse } from "@/shared/config/types/global.types";
 import { AfficheList } from "@/widgets/afficheList";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-import { strapiFetch } from "../../api/strapiFetch";
+import { getAffichePageData } from "./api/getAffichePageData";
 import { AfficheData, AfficheItem } from "./libs/affiche.types";
-import { AffichePageRoute } from "./libs/routes";
 
 const Affiche = async ({
   params: { locale },
 }: {
   params: { locale: string };
 }) => {
-  const AffichePageUrl: string = AffichePageRoute(locale);
-  const strapiUrl = process.env.STRAPI_URL;
-  const apiData: BaseResponse<AfficheData> = await strapiFetch(AffichePageUrl);
+  const apiData: BaseResponse<AfficheData> = await getAffichePageData(locale);
   const { blocks } = apiData.data;
   const upcomingBlock: AfficheItem | undefined = blocks.at(-1);
   const reversedBlocks: AfficheItem[] = blocks.slice(0, -1).reverse();
   const t = await getTranslations("AffichePage");
+  const strapiUrl = process.env.STRAPI_URL;
 
   return (
     <>

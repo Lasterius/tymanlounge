@@ -54,12 +54,11 @@ export default async function BaseLayout({ children, locale }: Props) {
 
   return (
     <html lang={locale}>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
       <body
         className={`${roboto.className} ${rubikMonoOne.variable} ${garamond.variable} text-lg`}
       >
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+
         <NextIntlClientProvider messages={messages}>
           <GlobalDataProvider initialGlobalData={globalData}>
             <Header />

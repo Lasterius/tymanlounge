@@ -4,18 +4,16 @@ import { BaseResponse } from "@/shared/config/types/global.types";
 import { LogoBlackFull } from "@/shared/icons/LogoBlackFull";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
-import { strapiFetch } from "../api/strapiFetch";
-import { HomeData, HomeItem } from "../libs/home-page.types";
-import { HomePageRoute } from "../libs/routes";
+import { getHomePageData } from "./api/getHomePageData";
+import { HomeData, HomeItem } from "./libs/home-page.types";
 
 const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
-  const HomePageUrl: string = HomePageRoute(locale);
-  const strapiUrl = process.env.STRAPI_URL;
   setRequestLocale(locale);
 
   const t = await getTranslations("HomePage");
-  const apiData: BaseResponse<HomeData> = await strapiFetch(HomePageUrl);
-  const { mainDescription, blocks, mainPicture } = apiData.data || {};
+  const apiData: BaseResponse<HomeData> = await getHomePageData(locale);
+  const { mainDescription, blocks, mainPicture } = apiData.data;
+  const strapiUrl = process.env.STRAPI_URL;
 
   return (
     <>
