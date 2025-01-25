@@ -10,12 +10,17 @@
 
   "HomePage": {
     "buttonRead": "Подробнее",
-    "reserve": "Бронь"
+    "reserve": "Бронь",
+    "menu": "Меню"
   },
 
   "AffichePage": {
     "buttonLoad": "Загрузить еще",
     "event": "Ближайшее событие"
+  },
+
+  "TeamPage": {
+    "title": "Наша команда"
   },
 
   "BurgerMenu": {

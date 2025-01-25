@@ -74,7 +74,7 @@ export const LangSwitcher = () => {
       </button>
 
       {isOpen && (
-        <ul className="absolute left-0 mt-2 w-12 rounded bg-wht shadow-lg">
+        <ul className="absolute -top-2 left-0 z-10 mt-1 w-12 translate-y-[-100%] overflow-hidden rounded-xl bg-wht shadow-lg transition-all md:top-auto md:translate-y-0">
           {languages.map((language) => (
             <li
               key={language.id}

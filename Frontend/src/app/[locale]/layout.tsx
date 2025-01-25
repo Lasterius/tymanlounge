@@ -23,13 +23,14 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description:
-      "Welcome to Tyman Hookah Lounge Bar in Belgrade, Serbia. With over 300 hookah flavors and an extensive collection of cocktails and beverages, we offer a unique and relaxing experience for every guest.",
+      "Welcome to Tyman Lounge & Bar at the heart of the Belgrade. Discover a world of flavors with over 320 hookah blends and a curated selection of exquisite cocktails and beverages. Whether you’re here to unwind, celebrate, or connect, we promise a one-of-a-kind experience that will delight your senses and leave you craving more.",
     icons: {
       icon: "/favicon.png",
     },
     robots: "index, follow",
     canonical: `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}`,
-    keywords: "hookah, shisha, lounge, bar, belgrade, serbia",
+    keywords:
+      "Tyman Lounge & Bar, hookah lounge Belgrade, best bar in Belgrade, Russian hookah, signature cocktails Belgrade, relaxing lounge in Belgrade, cozy bar, hookah bar in city center, Belgrade nightlife, bar for celebrations, unique drinks in Belgrade",
   };
 }
 

@@ -14,14 +14,14 @@ export const NavBar = () => {
   const { menu } = globalData || {};
 
   return (
-    <nav className="hidden flex-1 justify-center xl:flex">
+    <nav className="hidden justify-center xl:flex">
       <ul className="flex gap-16 font-bold uppercase">
         {navItems.slice(1).map((item) => {
           const localizedHref = `/${locale}${item.href}`;
           return (
             <li
               key={item.id}
-              className={`group relative text-wht transition-all hover:text-grn ${item.label === section ? "pointer-events-none" : ""}`}
+              className={`group relative text-wht transition-all hover:text-grn ${item.label === section ? "pointer-events-none border-t-2 border-grn" : ""}`}
             >
               {item.label === "menu" ? (
                 <a href={menu?.link} target="_blank" rel="noopener noreferrer">

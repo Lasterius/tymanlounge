@@ -13,3 +13,7 @@ export const AffichePageRoute = (lang: string) => {
 export const GalleryPageRoute = () => {
   return `/gallery-page?populate[Pictures][sort]=id:desc&populate[Pictures][populate][files][fields][0]=url`;
 };
+
+export const TeamPageRoute = (lang: string) => {
+  return `/team-page?locale=${lang}&populate[colleagues][populate][photo][fields][0]=url`;
+};

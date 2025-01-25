@@ -23,18 +23,24 @@ export const Footer = () => {
   const weekendFinish = formatWorkingTime(workingTime?.weekendFinish);
 
   return (
-    <footer className="mt-auto flex h-52 w-full flex-col items-center gap-1 bg-wht px-8 pb-2 pt-4 text-blck dark:bg-blck dark:text-wht">
+    <footer className="mt-auto flex h-80 w-full flex-col items-center gap-1 bg-wht p-2 text-blck dark:bg-blck dark:text-wht max-md:justify-center sm:gap-3 sm:px-8 sm:pb-2 sm:pt-4 xl:h-72">
       <span className="mb-4 block h-[2px] w-full bg-blck dark:bg-wht" />
-      <div className="mb-1 flex w-full justify-evenly">
+      <div className="mb-3 grid w-full justify-items-center gap-3 max-sm:grid-cols-1 sm:grid-cols-2 md:mb-8 xl:auto-cols-fr xl:grid-flow-col">
         <div className="flex items-center gap-3">
           <Watch className="h-5 w-5" />
           <div className="flex flex-col gap-1">
-            <p>
-              {t("weekdays")}: {weekdayStart} — {weekdayFinish}
-            </p>
-            <p>
-              {t("weekend")}: {weekendStart} — {weekendFinish}
-            </p>
+            <div className="flex justify-between gap-2">
+              <span>{t("weekdays")}:</span>{" "}
+              <span>
+                {weekdayStart} — {weekdayFinish}
+              </span>
+            </div>
+            <div className="flex justify-between gap-2">
+              <span>{t("weekend")}:</span>{" "}
+              <span>
+                {weekendStart} — {weekendFinish}
+              </span>
+            </div>
           </div>
         </div>
         <a
@@ -65,9 +71,11 @@ export const Footer = () => {
           <p>{email}</p>
         </a>
       </div>
-      <p>© Tyman Lounge & Bar. All rights reserved.</p>
-      <p>Development by Tsivilev Konstantin</p>
-      <p>2024 — {currentYear}</p>
+      <p className="max-sm:text-sm">
+        © Tyman Lounge & Bar. All rights reserved.
+      </p>
+      <p className="max-sm:text-sm">Development by Tsivilev Konstantin</p>
+      <p className="max-sm:text-sm">2024 — {currentYear}</p>
     </footer>
   );
 };

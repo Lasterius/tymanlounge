@@ -10,12 +10,17 @@
 
   "HomePage": {
     "buttonRead": "Read More",
-    "reserve": "Reserve"
+    "reserve": "Reserve",
+    "menu": "Menu"
   },
 
   "AffichePage": {
     "buttonLoad": "Load More",
     "event": "Upcoming event"
+  },
+
+  "TeamPage": {
+    "title": "Our Team"
   },
 
   "BurgerMenu": {

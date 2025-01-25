@@ -10,12 +10,17 @@
 
   "HomePage": {
     "buttonRead": "Više detalja",
-    "reserve": "Rezervacija"
+    "reserve": "Rezervacija",
+    "menu": "Meni"
   },
 
   "AffichePage": {
     "buttonLoad": "Učitaj više",
     "event": "Predstojeći događaj"
+  },
+
+  "TeamPage": {
+    "title": "Naš tim"
   },
 
   "BurgerMenu": {

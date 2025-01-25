@@ -5,8 +5,8 @@ export const languages = [
 ];
 
 export const navItems = [
-  { id: 0, label: "home", href: "./" },
-  { id: 1, label: "menu", href: "" },
+  { id: 0, label: "home", href: "" },
+  { id: 1, label: "menu", href: null },
   { id: 2, label: "affiche", href: "/affiche" },
   { id: 3, label: "gallery", href: "/gallery" },
   { id: 4, label: "team", href: "/team" },

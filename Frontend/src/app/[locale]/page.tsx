@@ -23,47 +23,45 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
           src={`${strapiUrl}${mainPicture.url}`}
           fill
           className="object-cover brightness-50"
-          sizes="100vw"
           priority
         />
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
           <LogoBlackFull className="w-2/3 text-white shadow-lg" />
-          <p className="relative mt-12 w-full px-4 text-center font-mainPicture text-3xl font-bold uppercase tracking-widest text-white">
+          <p className="relative mt-12 w-full px-4 text-center font-mainPicture text-sm font-bold uppercase tracking-widest text-white sm:text-lg lg:text-xl xl:text-3xl">
             {mainDescription}
           </p>
         </div>
       </div>
       {blocks.map((block: HomeItem) => (
         <div
-          className={`flex ${block.id % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
+          className={`flex max-md:flex-col ${block.id % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
           key={block.id}
         >
-          <div className="flex w-1/2 flex-col items-center justify-center gap-5 px-20">
-            <h2 className="">{block.title}</h2>
-            <p className="text-justify">{block.description}</p>
-            {block.title === "Menu" ? (
-              <a
-                href={block.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="self-start"
-              >
-                <Button>{t("buttonRead")}</Button>
-              </a>
-            ) : (
-              <Link className="self-start" href={block.url}>
-                <Button>{t("buttonRead")}</Button>
-              </Link>
-            )}
-          </div>
-          <div className="relative z-10 h-screen w-1/2">
+          <div className="relative z-10 h-[50vh] w-full md:h-screen md:w-1/2">
             <Image
               alt={`itemImage-${block.picture.id}`}
               src={`${strapiUrl}${block.picture.url}`}
               fill
               className="object-cover"
-              sizes="50vw"
             />
+          </div>
+          <div className="flex w-full flex-col items-center justify-center gap-5 p-4 max-md:h-[50vh] sm:px-12 md:w-1/2 md:p-10 xl:px-20">
+            <h2 className="">{block.title}</h2>
+            <p className="text-justify">{block.description}</p>
+            {block.title === t("menu") ? (
+              <a
+                href={block.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="md:self-start"
+              >
+                <Button>{t("buttonRead")}</Button>
+              </a>
+            ) : (
+              <Link className="md:self-start" href={block.url}>
+                <Button>{t("buttonRead")}</Button>
+              </Link>
+            )}
           </div>
         </div>
       ))}

@@ -789,6 +789,45 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiTeamPageTeamPage extends Struct.SingleTypeSchema {
+  collectionName: 'team_pages';
+  info: {
+    singularName: 'team-page';
+    pluralName: 'team-pages';
+    displayName: 'Team Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    colleagues: Schema.Attribute.Component<'shared.team-item', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::team-page.team-page'
+    >;
+  };
+}
+
 export interface AdminPermission extends Struct.CollectionTypeSchema {
   collectionName: 'admin_permissions';
   info: {
@@ -1179,6 +1218,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::global-data.global-data': ApiGlobalDataGlobalData;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::team-page.team-page': ApiTeamPageTeamPage;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;

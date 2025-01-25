@@ -14,6 +14,21 @@ export interface SharedWorkingTime extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTeamItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_team_items';
+  info: {
+    displayName: 'TeamItem';
+    icon: 'emotionHappy';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    position: Schema.Attribute.String & Schema.Attribute.Required;
+    instagram: Schema.Attribute.String & Schema.Attribute.Required;
+    photo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
@@ -126,6 +141,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.working-time': SharedWorkingTime;
+      'shared.team-item': SharedTeamItem;
       'shared.slider': SharedSlider;
       'shared.seo': SharedSeo;
       'shared.rich-text': SharedRichText;

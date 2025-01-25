@@ -18,18 +18,40 @@
   }
 
   h1 {
-    @apply text-5xl;
+    @apply text-3xl md:text-5xl;
   }
   h2 {
-    @apply text-4xl;
+    @apply text-2xl md:text-4xl;
   }
   h3 {
-    @apply text-3xl;
+    @apply text-xl md:text-3xl;
   }
   h4 {
-    @apply text-2xl;
+    @apply text-lg md:text-2xl;
   }
   h5 {
-    @apply text-xl;
+    @apply text-base md:text-xl;
   }
+}
+
+.swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+  align-items: center !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #277c45 !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #4a9e57 !important;
+}
+
+.swiper-slid {
+  display: flex !important;
+  justify-content: center !important;
 }

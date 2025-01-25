@@ -117,8 +117,9 @@ export const GalleryList = ({
               <Image
                 src={`${strapiUrl}${picture.files.url}`}
                 alt={`Picture ${picture.id}`}
-                width={300}
-                height={300}
+                width={1920}
+                height={1080}
+                loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
@@ -128,12 +129,12 @@ export const GalleryList = ({
       {/* Модальное окно */}
       {isOpen && selectedImageIndex !== null && (
         <div
-          className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-black bg-opacity-70"
+          className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-blck bg-opacity-90"
           onClick={handleModalClick}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          <div className="relative max-w-screen-lg rounded-lg bg-white shadow-lg">
+          <div className="relative flex items-center justify-center rounded-lg shadow-lg">
             <button
               onClick={closeModal}
               className="absolute right-2 top-2 p-1 text-4xl text-white transition-colors hover:text-grn"
@@ -148,8 +149,8 @@ export const GalleryList = ({
             <Image
               src={`${strapiUrl}${pictures[selectedImageIndex].files.url}`}
               alt={`Selected Picture ${pictures[selectedImageIndex].id}`}
-              width={800}
-              height={600}
+              width={1920}
+              height={1020}
               className="h-full max-h-[95vh] w-full max-w-[95vw] object-contain"
             />
           </div>

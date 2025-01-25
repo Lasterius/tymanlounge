@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_shared_team_items",
+  "info": {
+    "displayName": "TeamItem",
+    "icon": "emotionHappy"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "position": {
+      "type": "string",
+      "required": true
+    },
+    "instagram": {
+      "type": "string",
+      "required": true
+    },
+    "photo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

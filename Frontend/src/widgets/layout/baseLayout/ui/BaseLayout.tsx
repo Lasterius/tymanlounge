@@ -55,14 +55,14 @@ export default async function BaseLayout({ children, locale }: Props) {
   return (
     <html lang={locale}>
       <body
-        className={`${roboto.className} ${rubikMonoOne.variable} ${garamond.variable} text-lg`}
+        className={`${roboto.className} ${rubikMonoOne.variable} ${garamond.variable} flex min-h-screen flex-col text-base md:text-lg`}
       >
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
 
         <NextIntlClientProvider messages={messages}>
           <GlobalDataProvider initialGlobalData={globalData}>
             <Header />
-            <main className="min-h-[calc(100vh-208px)] bg-wht text-blck dark:bg-blck dark:text-wht">
+            <main className="flex-grow bg-wht text-blck dark:bg-blck dark:text-wht">
               {children}
             </main>
             <Footer />

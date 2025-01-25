@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "team_pages",
+  "info": {
+    "singularName": "team-page",
+    "pluralName": "team-pages",
+    "displayName": "Team Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "colleagues": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.team-item",
+      "required": true
+    }
+  }
+}
