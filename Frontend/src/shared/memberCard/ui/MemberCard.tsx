@@ -15,6 +15,7 @@ export const MemberCard = ({ colleague }: MemberCardProps) => {
         src={`${strapiUrl}${colleague.photo.url}`}
         alt={colleague.name}
         fill
+        sizes="1080px"
         className="object-cover"
       />
       <div className="absolute bottom-3 left-1/2 w-[90%] -translate-x-1/2 rounded-lg bg-blck bg-opacity-80 p-4 text-center text-wht">

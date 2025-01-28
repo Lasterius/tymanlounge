@@ -16,7 +16,7 @@ export const BurgerMenu = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const pathname = usePathname();
-  const [, locale, section] = pathname.split("/");
+  const [, locale] = pathname.split("/");
   const t = useTranslations("BurgerMenu");
   const tr = useTranslations("HomePage");
 
@@ -52,8 +52,6 @@ export const BurgerMenu = () => {
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
-
-  console.log(section);
 
   return (
     <div className="relative max-md:flex max-md:flex-1 max-md:justify-end xl:hidden">
