@@ -33,6 +33,7 @@ export const AfficheList = ({
             alt={block.name}
             src={`${strapiUrl}${block.picture.url}`}
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover brightness-50"
           />
           <div className="absolute inset-0 flex flex-col justify-center gap-2 p-4 text-wht sm:p-8 xl:p-20">

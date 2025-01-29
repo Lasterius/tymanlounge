@@ -2,6 +2,7 @@ import { Link } from "@/i18n/routing";
 import { Button } from "@/shared/button";
 import { BaseResponse } from "@/shared/config/types/global.types";
 import { LogoBlackFull } from "@/shared/icons/LogoBlackFull";
+import { ReserveButton } from "@/shared/reserveButton";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { getHomePageData } from "./api/getHomePageData";
@@ -22,14 +23,19 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
           alt="mainBg"
           src={`${strapiUrl}${mainPicture.url}`}
           fill
+          sizes="100vw"
           className="object-cover brightness-50"
           priority
         />
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
-          <LogoBlackFull className="w-2/3 text-white shadow-lg" />
+          <LogoBlackFull className="w-2/3 text-white" />
           <p className="relative mt-12 w-full px-4 text-center font-mainPicture text-sm font-bold uppercase tracking-widest text-white sm:text-lg lg:text-xl xl:text-3xl">
             {mainDescription}
           </p>
+          <ReserveButton
+            buttonText={t("reserve")}
+            className="absolute bottom-32 w-2/4 text-lg max-sm:h-12 sm:h-14 md:hidden"
+          />
         </div>
       </div>
       {blocks.map((block: HomeItem) => (
@@ -42,6 +48,7 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
               alt={`itemImage-${block.picture.id}`}
               src={`${strapiUrl}${block.picture.url}`}
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
           </div>

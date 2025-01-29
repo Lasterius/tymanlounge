@@ -151,6 +151,7 @@ export const GalleryList = ({
               alt={`Selected Picture ${pictures[selectedImageIndex].id}`}
               width={1920}
               height={1020}
+              priority
               className="h-full max-h-[95vh] w-full max-w-[95vw] object-contain"
             />
           </div>
