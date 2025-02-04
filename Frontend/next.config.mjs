@@ -8,15 +8,19 @@ const nextConfig = {
     STRAPI_URL: process.env.STRAPI_URL,
     API_URL: process.env.API_URL,
   },
+  // images: {
+  //   remotePatterns: [
+  //     {
+  //       protocol: "http",
+  //       hostname: "localhost",
+  //       port: "1337",
+  //       pathname: "/uploads/**",
+  //     },
+  //   ],
+  // },
   images: {
-    remotePatterns: [
-      {
-        protocol: "http",
-        hostname: "localhost",
-        port: "1337",
-        pathname: "/uploads/**",
-      },
-    ],
+    domains: ["tymanlounge.onrender.com"],
+    path: `${process.env.STRAPI_URL}/uploads/`,
   },
 };
 

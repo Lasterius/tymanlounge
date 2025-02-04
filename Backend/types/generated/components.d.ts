@@ -19,10 +19,15 @@ export interface SharedTeamItem extends Struct.ComponentSchema {
   info: {
     displayName: 'TeamItem';
     icon: 'emotionHappy';
+    description: '';
   };
   attributes: {
     name: Schema.Attribute.String & Schema.Attribute.Required;
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
     position: Schema.Attribute.String & Schema.Attribute.Required;
     instagram: Schema.Attribute.String & Schema.Attribute.Required;
     photo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
