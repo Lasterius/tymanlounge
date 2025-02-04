@@ -12,7 +12,7 @@ export default [
   {
     name: 'koa-static',
     config: {
-      dir: '/data/uploads',
+      dir: '/data/public/uploads',
       maxage: 2592000, // Кэширование на 1 месяц
     },
   },
