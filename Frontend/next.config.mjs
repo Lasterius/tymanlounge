@@ -19,8 +19,8 @@ const nextConfig = {
   //   ],
   // },
   images: {
-    domains: ["tymanlounge.onrender.com"],
-    path: `${process.env.STRAPI_URL}/uploads/`,
+    domains: ["https://strapi-server-a2a6.onrender.com"],
+    // path: `${process.env.STRAPI_URL}/uploads/`,
   },
 };
 
