@@ -19,7 +19,7 @@ const nextConfig = {
   //   ],
   // },
   images: {
-    domains: ["https://strapi-server-a2a6.onrender.com"],
+    domains: ["strapi-server-a2a6.onrender.com"],
     // path: `${process.env.STRAPI_URL}/uploads/`,
   },
 };
