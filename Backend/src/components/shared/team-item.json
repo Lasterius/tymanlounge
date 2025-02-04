@@ -14,7 +14,7 @@
     "description": {
       "type": "text",
       "required": true,
-      "maxLength": 35
+      "maxLength": 30
     },
     "position": {
       "type": "string",

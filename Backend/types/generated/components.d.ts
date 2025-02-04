@@ -26,7 +26,7 @@ export interface SharedTeamItem extends Struct.ComponentSchema {
     description: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 35;
+        maxLength: 30;
       }>;
     position: Schema.Attribute.String & Schema.Attribute.Required;
     instagram: Schema.Attribute.String & Schema.Attribute.Required;
