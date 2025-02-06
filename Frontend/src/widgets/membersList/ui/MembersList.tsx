@@ -35,9 +35,13 @@ export const MembersList = ({ colleagues }: MembersListProps) => {
         2000: { slidesPerView: 6 },
       }}
     >
-      {colleagues.map((colleague) => (
+      {colleagues.map((colleague, index) => (
         <SwiperSlide key={colleague.id}>
-          <MemberCard colleague={colleague} />
+          <MemberCard
+            colleague={colleague}
+            loading={index < 5 ? "eager" : "lazy"}
+            priority={index < 5}
+          />
         </SwiperSlide>
       ))}
     </Swiper>

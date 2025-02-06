@@ -131,7 +131,8 @@ export const GalleryList = ({
                 alt={`Picture ${picture.id}`}
                 width={1920}
                 height={1080}
-                loading="lazy"
+                loading={index < 9 ? "eager" : "lazy"}
+                priority={index < 9}
                 className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>

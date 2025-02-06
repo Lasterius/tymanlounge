@@ -4,9 +4,15 @@ import Image from "next/image";
 
 interface MemberCardProps {
   colleague: TeamMember;
+  loading?: "lazy" | "eager";
+  priority?: boolean;
 }
 
-export const MemberCard = ({ colleague }: MemberCardProps) => {
+export const MemberCard = ({
+  colleague,
+  loading = "lazy",
+  priority = false,
+}: MemberCardProps) => {
   const strapiUrl = process.env.STRAPI_URL;
 
   return (
@@ -17,6 +23,8 @@ export const MemberCard = ({ colleague }: MemberCardProps) => {
         fill
         sizes="1080px"
         className="object-cover"
+        loading={loading}
+        priority={priority}
       />
       <div className="absolute bottom-3 left-1/2 w-[90%] -translate-x-1/2 rounded-lg bg-blck bg-opacity-80 p-4 text-center text-wht">
         <a

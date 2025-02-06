@@ -26,6 +26,7 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
           sizes="100vw"
           className="object-cover brightness-50"
           priority
+          loading="eager"
         />
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
           <LogoBlackFull className="w-2/3 text-white" />
