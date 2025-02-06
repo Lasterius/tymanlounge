@@ -67,6 +67,8 @@ export const LangSwitcher = () => {
         className="group flex h-8 w-12 items-center justify-center gap-2 rounded-full bg-wht p-1"
         onClick={() => setIsOpen(!isOpen)}
         disabled={isPending}
+        aria-label="Language switcher"
+        data-title="Language switcher"
       >
         <div className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
           {flagIcons[currentLanguage?.id || "en"]}

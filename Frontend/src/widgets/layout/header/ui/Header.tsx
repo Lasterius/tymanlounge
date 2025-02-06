@@ -14,6 +14,8 @@ export const Header = () => {
       <Link
         href="./"
         className="flex w-auto content-start items-start justify-start xl:w-[275px]"
+        aria-label="Home"
+        data-title="Home"
       >
         <LogoBlackFull className="h-12 w-auto text-wht" />
       </Link>

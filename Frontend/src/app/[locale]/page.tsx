@@ -60,12 +60,19 @@ const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
                 href={block.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="md:self-start"
+                className="custom-tooltip md:self-start"
+                data-title={block.title}
+                aria-label={block.title}
               >
                 <Button>{t("buttonRead")}</Button>
               </a>
             ) : (
-              <Link className="md:self-start" href={block.url}>
+              <Link
+                className="custom-tooltip md:self-start"
+                href={block.url}
+                data-title={block.title}
+                aria-label={block.title}
+              >
                 <Button>{t("buttonRead")}</Button>
               </Link>
             )}

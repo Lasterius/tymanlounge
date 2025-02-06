@@ -71,6 +71,8 @@ export const BurgerMenu = () => {
         ref={buttonRef}
         onClick={toggleMenu}
         className={`flex h-8 w-8 flex-col items-center justify-center space-y-1 rounded-md ${isOpen ? "" : "gap-1"}`}
+        aria-label="Burger menu"
+        data-title="Burger menu"
       >
         <span
           className={`block h-1 w-8 rounded-sm bg-wht transition-transform duration-300 ${

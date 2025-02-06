@@ -26,6 +26,8 @@ export const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className="group relative flex h-8 w-16 items-center rounded-full bg-wht p-1 transition-colors duration-300"
+      aria-label="Theme toggle"
+      data-title="Theme toggle"
     >
       <Sun className="absolute left-2 h-5 w-5 text-blck transition-opacity duration-300" />
 

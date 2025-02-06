@@ -25,15 +25,7 @@ export const MemberCard = ({ colleague }: MemberCardProps) => {
           rel="noopener noreferrer"
           className="flex items-center justify-between transition-colors hover:text-grn"
         >
-          <p className="text-xl font-bold">
-            {/* {colleague.name.split(" ").map((word, index) => (
-            <span key={index}>
-              {word}
-              {index < colleague.name.split(" ").length - 1 && <br />}
-            </span>
-          ))} */}
-            {colleague.name}
-          </p>
+          <p className="text-xl font-bold">{colleague.name}</p>
           <Instagram className="h-5 w-5" />
         </a>
         <div className="flex items-center gap-3">
