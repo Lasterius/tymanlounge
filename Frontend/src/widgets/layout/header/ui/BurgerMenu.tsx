@@ -53,6 +53,18 @@ export const BurgerMenu = () => {
     setIsOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    if (isOpen && window.innerWidth < 768) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   return (
     <div className="relative max-md:flex max-md:flex-1 max-md:justify-end xl:hidden">
       <button
@@ -89,7 +101,8 @@ export const BurgerMenu = () => {
             return (
               <li
                 key={item.id}
-                className={`flex h-14 w-full cursor-pointer items-center justify-center text-wht transition-colors hover:bg-wht hover:text-blck/70 ${pathname === localizedHref ? "pointer-events-none bg-wht !text-blck" : ""}`}
+                onClick={() => setIsOpen(false)}
+                className={`flex h-14 w-full cursor-pointer items-center justify-center text-wht transition-colors hover:bg-wht hover:text-blck/70 ${pathname === localizedHref && item.label !== "menu" ? "pointer-events-none bg-wht !text-blck" : ""}`}
               >
                 {item.label === "menu" ? (
                   <a
@@ -112,7 +125,7 @@ export const BurgerMenu = () => {
             );
           })}
         </ul>
-        <div className="mb-20 mt-auto flex items-center justify-evenly md:hidden">
+        <div className="mt-4 flex items-center justify-evenly md:hidden">
           <ReserveButton buttonText={tr("reserve")} />
           <LangSwitcher />
           <ThemeToggle />

@@ -95,6 +95,18 @@ export const GalleryList = ({
     setImagesLoaded(true); // Устанавливаем флаг после вычисления высот
   }, [pictures]);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   return (
     <div className="relative">
       {/* Галерея */}

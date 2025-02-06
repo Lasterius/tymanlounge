@@ -10,7 +10,7 @@ export const MemberCard = ({ colleague }: MemberCardProps) => {
   const strapiUrl = process.env.STRAPI_URL;
 
   return (
-    <div className="relative h-[70vh] w-auto overflow-hidden rounded-2xl border-2 border-drkgrn shadow-2xl dark:border-grn">
+    <div className="relative h-[65vh] w-auto overflow-hidden rounded-2xl border-2 border-drkgrn shadow-2xl dark:border-grn">
       <Image
         src={`${strapiUrl}${colleague.photo.url}`}
         alt={colleague.name}
