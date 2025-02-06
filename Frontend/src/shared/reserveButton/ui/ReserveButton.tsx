@@ -13,6 +13,8 @@ export const ReserveButton = ({
   return (
     <button
       className={`group flex h-8 w-36 items-center justify-center rounded-full bg-wht p-1 font-mainPicture font-bold uppercase text-blck ${className}`}
+      aria-label="Reserve button"
+      data-title="Reserve button"
     >
       <a
         href={reservation?.link}
