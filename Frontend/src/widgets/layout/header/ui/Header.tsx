@@ -10,7 +10,7 @@ import { NavBar } from "./NavBar";
 export const Header = () => {
   const t = useTranslations("HomePage");
   return (
-    <header className="fixed left-0 right-0 top-0 z-[998] flex h-16 w-full items-center justify-between gap-2 bg-gradient-to-b from-blck/95 to-blck/65 px-3">
+    <header className="fixed left-0 right-0 top-0 z-[998] flex h-16 w-full items-center justify-between gap-2 bg-gradient-to-b from-blck/95 to-blck/65 px-3 backdrop-blur-sm">
       <Link
         href="./"
         className="flex w-auto content-start items-start justify-start xl:w-[275px]"

@@ -120,7 +120,7 @@ export const GalleryList = ({
           pictures.map((picture, index) => (
             <div
               key={picture.id}
-              className="group relative cursor-pointer overflow-hidden rounded-lg shadow-lg"
+              className="group relative flex cursor-pointer items-end overflow-hidden rounded-lg shadow-lg"
               style={{
                 gridRowEnd: `span ${imageHeights[index]}`,
               }}
@@ -133,7 +133,7 @@ export const GalleryList = ({
                 height={1080}
                 loading={index < 9 ? "eager" : "lazy"}
                 priority={index < 9}
-                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                className="h-full w-full self-end object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
           ))}
