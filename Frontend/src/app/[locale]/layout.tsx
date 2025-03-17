@@ -23,7 +23,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description:
-      "Tyman Lounge & Bar - a world of flavors with over 320 russian hookah blends and a curated selection of exquisite cocktails at the heart of Belgrade. Celebrate, connect and experince a truly delightful time in our hookah bar.",
+      "Tyman Lounge & Bar - a world of flavors with over 320 russian hookah blends and a curated selection of exquisite cocktails at the heart of Belgrade. Celebrate, connect and experience a truly delightful time in our hookah bar.",
     icons: {
       icon: "/favicon.png",
     },
@@ -31,6 +31,17 @@ export async function generateMetadata({
     canonical: `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}`,
     keywords:
       "russian shisha, hookah lounge Belgrade, best bar in Belgrade, Russian hookah, signature cocktails Belgrade, relaxing lounge in Belgrade, cozy bar, hookah bar in city center, Belgrade nightlife, bar for celebrations, unique drinks in Belgrade",
+    openGraph: {
+      title: t("title"),
+      description:
+        "Tyman Lounge & Bar - a world of flavors with over 320 russian hookah blends and a curated selection of exquisite cocktails at the heart of Belgrade.",
+      image:
+        "https://www.tyman.rs/_next/image?url=https%3A%2F%2Fstrapi-server-a2a6.onrender.com%2Fuploads%2FIMG_3635_959d62c61c.jpg&w=3840&q=75",
+      url: "www.tyman.rs",
+      type: "website",
+      locale: locale,
+      siteName: "Tyman Lounge & Bar",
+    },
   };
 }
 
