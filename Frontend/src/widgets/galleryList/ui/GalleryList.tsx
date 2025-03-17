@@ -2,7 +2,7 @@
 
 import { IPictures } from "@/app/[locale]/gallery/libs/gallery.types";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const GalleryList = ({
   pictures,
@@ -13,9 +13,12 @@ export const GalleryList = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
-  const [imageHeights, setImageHeights] = useState<number[]>([]);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
+
+  const imageHeights = useMemo(
+    () => pictures.map(() => Math.floor(Math.random() * (15 - 5 + 1) + 5)),
+    [pictures],
+  );
 
   const openModal = (index: number) => {
     setSelectedImageIndex(index);
@@ -87,15 +90,6 @@ export const GalleryList = ({
   };
 
   useEffect(() => {
-    // Рассчитываем высоты изображений до первого рендера
-    const heights = pictures.map(() =>
-      Math.floor(Math.random() * (15 - 5 + 1) + 5),
-    ); // Примерная высота
-    setImageHeights(heights);
-    setImagesLoaded(true); // Устанавливаем флаг после вычисления высот
-  }, [pictures]);
-
-  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -116,27 +110,26 @@ export const GalleryList = ({
           gridAutoRows: "30px", // Базовая высота строки
         }}
       >
-        {imagesLoaded &&
-          pictures.map((picture, index) => (
-            <div
-              key={picture.id}
-              className="group relative flex cursor-pointer items-end overflow-hidden rounded-lg shadow-lg"
-              style={{
-                gridRowEnd: `span ${imageHeights[index]}`,
-              }}
-              onClick={() => openModal(index)}
-            >
-              <Image
-                src={`${strapiUrl}${picture.files.url}`}
-                alt={`Picture ${picture.id}`}
-                width={1920}
-                height={1080}
-                loading={index < 9 ? "eager" : "lazy"}
-                priority={index < 9}
-                className="h-full w-full self-end object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-          ))}
+        {pictures.map((picture, index) => (
+          <div
+            key={picture.id}
+            className="group relative flex cursor-pointer items-end overflow-hidden rounded-lg shadow-lg"
+            style={{
+              gridRowEnd: `span ${imageHeights[index]}`,
+            }}
+            onClick={() => openModal(index)}
+          >
+            <Image
+              src={`${strapiUrl}${picture.files.url}`}
+              alt={`Picture ${picture.id}`}
+              width={1920}
+              height={1080}
+              loading={index < 3 ? "eager" : "lazy"}
+              priority={index < 3}
+              className="h-full w-full self-end object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+        ))}
       </div>
 
       {/* Модальное окно */}
