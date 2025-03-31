@@ -4,6 +4,7 @@ import "@/app/globals.css";
 import { BaseResponse, GlobalData } from "@/shared/config/types/global.types";
 import { Footer } from "@/widgets/layout/footer";
 import { Header } from "@/widgets/layout/header";
+import { Analytics } from "@vercel/analytics/next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { EB_Garamond, Roboto, Rubik_Mono_One } from "next/font/google";
@@ -64,6 +65,7 @@ export default async function BaseLayout({ children, locale }: Props) {
             <Header />
             <main className="flex-grow bg-wht text-blck dark:bg-blck dark:text-wht">
               {children}
+              <Analytics />
             </main>
             <Footer />
           </GlobalDataProvider>
