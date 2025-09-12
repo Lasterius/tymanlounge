@@ -9,6 +9,7 @@
   },
 
   "HomePage": {
+    "title": "Tyman Lounge & Bar",
     "buttonRead": "Подробнее",
     "reserve": "Бронь",
     "reserveTable": "Забронировать стол",
@@ -20,8 +21,12 @@
     "event": "Ближайшее событие"
   },
 
+  "GalleryPage": {
+    "title": "Галерея"
+  },
+
   "TeamPage": {
-    "title": "Наша команда"
+    "title": "О нас"
   },
 
   "BurgerMenu": {
@@ -29,11 +34,23 @@
     "menu": "Меню",
     "affiche": "Афиша",
     "gallery": "Галерея",
-    "team": "Команда"
+    "about": "О нас"
   },
 
   "Footer": {
     "weekdays": "Вс — Чт",
     "weekend": "Пт — Сб"
+  },
+
+  "PointSelection": {
+    "selectLocation": "Выберите локацию",
+    "waterfrontName": "Водный фронт",
+    "waterfrontAddress": "BW Eterna (вход с Савской улицы), Белград",
+    "dorcolName": "Дорчол",
+    "dorcolAddress": "Винезолова 52, Белград",
+    "openNow": "Открыто сейчас",
+    "visitLocation": "Посетить локацию",
+    "clickToEnter": "Нажмите для входа",
+    "chooseLocation": "Выберите предпочитаемую локацию для продолжения"
   }
 }

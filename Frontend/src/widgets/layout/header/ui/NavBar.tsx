@@ -1,27 +1,34 @@
 "use client";
 
-import { useGlobalData } from "@/app/context/GlobalDataContext";
-import { navItems } from "@/shared/config/constants";
+import { navItems } from "@/shared/services/constants";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { IGlobalDataDTO } from "@/shared/services/types/dto.types";
 
-export const NavBar = () => {
+type NavBarProps = {
+  globalData?: IGlobalDataDTO;
+};
+
+export const NavBar = ({ globalData }: NavBarProps) => {
   const t = useTranslations("BurgerMenu");
   const pathname = usePathname();
-  const [, locale, section] = pathname.split("/");
-  const { globalData } = useGlobalData();
-  const { menu } = globalData || {};
+  const [, locale, point, section] = pathname.split("/");
+  const menu = globalData?.Menu;
 
   return (
     <nav className="hidden justify-center xl:flex">
       <ul className="flex gap-16 font-bold uppercase">
-        {navItems.slice(1).map((item) => {
-          const localizedHref = `/${locale}${item.href}`;
+        {navItems.map((item) => {
+          const localizedHref = `/${locale}/${point}${item.href}`;
           return (
             <li
               key={item.id}
-              className={`group relative text-wht transition-all hover:text-grn ${item.label === section ? "pointer-events-none border-t-2 border-grn" : ""}`}
+              className={`group relative text-wht transition-all hover:text-grn ${
+                (item.label === "home" && !section) || item.label === section
+                  ? "pointer-events-none border-t-2 border-grn"
+                  : ""
+              }`}
             >
               {item.label === "menu" ? (
                 <a href={menu?.link} target="_blank" rel="noopener noreferrer">

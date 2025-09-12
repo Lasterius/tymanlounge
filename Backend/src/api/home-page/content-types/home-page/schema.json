@@ -50,6 +50,11 @@
           "localized": false
         }
       }
+    },
+    "points": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::point.point"
     }
   }
 }

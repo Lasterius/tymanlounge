@@ -1,4 +1,4 @@
-import { Locale } from "@/shared/config/types/global.types";
+import { TLocale } from "@/shared/services/types/dto.types";
 import { getRequestConfig } from "next-intl/server";
 import { routing } from "./routing";
 
@@ -7,7 +7,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   let locale = await requestLocale;
 
   // Ensure that a valid locale is used
-  if (!locale || !routing.locales.includes(locale as Locale)) {
+  if (!locale || !routing.locales.includes(locale as TLocale)) {
     locale = routing.defaultLocale;
   }
 

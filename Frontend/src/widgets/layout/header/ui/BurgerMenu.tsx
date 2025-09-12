@@ -1,27 +1,28 @@
 "use client";
 
-import { useGlobalData } from "@/app/context/GlobalDataContext";
-import { navItems } from "@/shared/config/constants";
-import { LangSwitcher } from "@/shared/langSwitcher";
-import { ReserveButton } from "@/shared/reserveButton";
-import { ThemeToggle } from "@/shared/themeToggle";
+import { navItems } from "@/shared/services/constants";
+import { LangSwitcher, ReserveButton, ThemeToggle } from "@/shared/ui";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { IGlobalDataDTO } from "@/shared/services/types/dto.types";
 
-export const BurgerMenu = () => {
+type BurgerMenuProps = {
+  globalData?: IGlobalDataDTO;
+};
+
+export const BurgerMenu = ({ globalData }: BurgerMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const pathname = usePathname();
-  const [, locale] = pathname.split("/");
+  const [, locale, point] = pathname.split("/");
   const t = useTranslations("BurgerMenu");
   const tr = useTranslations("HomePage");
 
-  const { globalData } = useGlobalData();
-  const { menu } = globalData || {};
+  const menu = globalData?.Menu;
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -99,7 +100,7 @@ export const BurgerMenu = () => {
       >
         <ul className="flex flex-col items-center justify-center gap-4 px-4 py-8">
           {navItems.map((item) => {
-            const localizedHref = `/${locale}${item.href}`;
+            const localizedHref = `/${locale}/${point}${item.href}`;
             return (
               <li
                 key={item.id}
@@ -128,7 +129,7 @@ export const BurgerMenu = () => {
           })}
         </ul>
         <div className="mt-4 flex items-center justify-evenly md:hidden">
-          <ReserveButton buttonText={tr("reserve")} />
+          <ReserveButton buttonText={tr("reserve")} globalData={globalData} />
           <LangSwitcher />
           <ThemeToggle />
         </div>

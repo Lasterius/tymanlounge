@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "global_data_collections",
+  "info": {
+    "singularName": "global-data-collection",
+    "pluralName": "global-data-collections",
+    "displayName": "GlobalDataCollection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true
+    },
+    "points": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::point.point",
+      "inversedBy": "global_data_collections"
+    },
+    "Email": {
+      "pluginOptions": {},
+      "type": "email",
+      "required": true
+    },
+    "WorkingTime": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {},
+      "component": "shared.working-time",
+      "required": true
+    },
+    "Instagram": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {},
+      "component": "shared.name-and-link",
+      "required": true
+    },
+    "Address": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {},
+      "component": "shared.name-and-link",
+      "required": true
+    },
+    "Reservation": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {},
+      "component": "shared.name-and-link",
+      "required": true
+    },
+    "Menu": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {},
+      "component": "shared.name-and-link",
+      "required": true
+    }
+  }
+}

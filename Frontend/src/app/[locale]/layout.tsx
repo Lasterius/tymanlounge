@@ -1,14 +1,16 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import "@/shared/globals.css";
 
 import { routing } from "@/i18n/routing";
-import { BaseLayout } from "@/widgets/layout/baseLayout";
-import { Locale } from "../../shared/config/types/global.types";
+import { TLocale } from "@/shared/services/types/dto.types";
 
 type Props = {
   children: ReactNode;
-  params: { locale: Locale };
+  params: { locale: TLocale };
 };
 
 export function generateStaticParams() {
@@ -57,5 +59,11 @@ export default async function LocaleLayout({
   // Enable static rendering
   setRequestLocale(locale);
 
-  return <BaseLayout locale={locale}>{children}</BaseLayout>;
+  const messages = await getMessages();
+
+  return (
+    <NextIntlClientProvider messages={messages}>
+      {children}
+    </NextIntlClientProvider>
+  );
 }

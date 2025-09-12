@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "affiche_collections",
+  "info": {
+    "singularName": "affiche-collection",
+    "pluralName": "affiche-collections",
+    "displayName": "AfficheCollection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "point": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::point.point",
+      "inversedBy": "affiche_collections"
+    },
+    "afficheItem": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.affiche-item",
+      "required": true
+    }
+  }
+}

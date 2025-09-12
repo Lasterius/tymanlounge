@@ -9,6 +9,7 @@
   },
 
   "HomePage": {
+    "title": "Tyman Lounge & Bar",
     "buttonRead": "Read More",
     "reserve": "Reserve",
     "reserveTable": "Reserve a table",
@@ -20,8 +21,12 @@
     "event": "Upcoming event"
   },
 
+  "GalleryPage": {
+    "title": "Gallery"
+  },
+
   "TeamPage": {
-    "title": "Our Team"
+    "title": "About Us"
   },
 
   "BurgerMenu": {
@@ -29,11 +34,23 @@
     "menu": "Menu",
     "affiche": "Affiche",
     "gallery": "Gallery",
-    "team": "Team"
+    "about": "About Us"
   },
 
   "Footer": {
     "weekdays": "Sun — Thu",
     "weekend": "Fri — Sat"
+  },
+
+  "PointSelection": {
+    "selectLocation": "Select Location",
+    "waterfrontName": "Waterfront",
+    "waterfrontAddress": "BW Eterna (entrance from Savska ulica), Belgrade",
+    "dorcolName": "Dorcol",
+    "dorcolAddress": "Venizelosova 52, Belgrade",
+    "openNow": "Open Now",
+    "visitLocation": "Visit Location",
+    "clickToEnter": "Click to Enter",
+    "chooseLocation": "Choose your preferred location to continue"
   }
 }

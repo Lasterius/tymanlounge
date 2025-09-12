@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_collections",
+  "info": {
+    "singularName": "home-collection",
+    "pluralName": "home-collections",
+    "displayName": "HomeCollection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "point": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::point.point",
+      "inversedBy": "home_collections"
+    },
+    "mainDescription": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "required": true
+    },
+    "mainPicture": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "mainItem": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.main-item",
+      "required": true
+    }
+  }
+}

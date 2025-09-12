@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gallery_collections",
+  "info": {
+    "singularName": "gallery-collection",
+    "pluralName": "gallery-collections",
+    "displayName": "GalleryCollection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Pictures": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.slider",
+      "required": true
+    },
+    "points": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::point.point",
+      "inversedBy": "gallery_collections"
+    },
+    "Title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

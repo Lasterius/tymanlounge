@@ -9,6 +9,7 @@
   },
 
   "HomePage": {
+    "title": "Tyman Lounge & Bar",
     "buttonRead": "Više detalja",
     "reserve": "Rezervacija",
     "reserveTable": "Rezervišite sto",
@@ -20,8 +21,12 @@
     "event": "Predstojeći događaj"
   },
 
+  "GalleryPage": {
+    "title": "Galerija"
+  },
+
   "TeamPage": {
-    "title": "Naš tim"
+    "title": "O nama"
   },
 
   "BurgerMenu": {
@@ -29,11 +34,23 @@
     "menu": "Meni",
     "affiche": "Afiš",
     "gallery": "Galerija",
-    "team": "Tim"
+    "about": "O nama"
   },
 
   "Footer": {
     "weekdays": "Ned — Čet",
     "weekend": "Pet — Sub"
+  },
+
+  "PointSelection": {
+    "selectLocation": "Izaberite lokaciju",
+    "waterfrontName": "Vodni front",
+    "waterfrontAddress": "BW Eterna (ulaz sa Savske ulice), Beograd",
+    "dorcolName": "Dorćol",
+    "dorcolAddress": "Venizelosova 52, Beograd",
+    "openNow": "Otvoreno sada",
+    "visitLocation": "Posetite lokaciju",
+    "clickToEnter": "Kliknite za ulazak",
+    "chooseLocation": "Izaberite željenu lokaciju za nastavak"
   }
 }
