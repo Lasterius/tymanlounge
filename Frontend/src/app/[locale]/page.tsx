@@ -1,9 +1,9 @@
+import { getAllPoints } from "@/shared/services/api/getPointData";
+import { STRAPI_URL } from "@/shared/services/constants";
+import { IPointDTO } from "@/shared/services/types/dto.types";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
-import { getAllPoints } from "@/shared/services/api/getPointData";
-import { IPointDTO } from "@/shared/services/types/dto.types";
-import { STRAPI_URL } from "@/shared/services/constants";
 
 const PointSelection = async ({
   params: { locale },
@@ -22,7 +22,7 @@ const PointSelection = async ({
   }
 
   return (
-    <div className="relative flex h-screen flex-col overflow-hidden bg-black text-white">
+    <div className="relative flex h-screen flex-grow flex-col overflow-hidden bg-black text-white">
       {/* Background Video */}
       <video
         autoPlay
@@ -48,14 +48,14 @@ const PointSelection = async ({
 
       {/* Main Content */}
       <div className="relative z-20 flex flex-1 items-center justify-center px-6">
-        <div className="grid w-full max-w-6xl gap-8 md:grid-cols-2 xl:gap-16">
+        <div className="grid w-full max-w-[80vw] gap-8 md:grid-cols-2 xl:gap-16">
           {points.map((point) => (
             <Link
               key={point.id}
               href={`/${locale}/${point.Slug}`}
               className="group relative overflow-hidden rounded-2xl bg-gray-900 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
             >
-              <div className="relative h-96 w-full md:h-[56vh]">
+              <div className="relative h-[37vh] w-full md:h-[56vh]">
                 <Image
                   src={`${STRAPI_URL}${point.MainImage.url}`}
                   alt={point.Name}
@@ -67,10 +67,16 @@ const PointSelection = async ({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               </div>
 
-              <div className="absolute bottom-0 left-0 right-0 p-8">
-                <h2 className="mb-2 text-3xl font-bold">{point.Name}</h2>
-                <p className="mb-4 text-lg opacity-90">{point.Address}</p>
-                <p className="mb-4 text-lg opacity-90">{point.Description}</p>
+              <div className="absolute bottom-0 left-0 right-0 px-4 py-4 md:p-8">
+                <h2 className="mb-2 text-lg font-bold md:text-3xl">
+                  {point.Name}
+                </h2>
+                <p className="mb-4 text-xs opacity-90 md:text-lg">
+                  {point.Address}
+                </p>
+                <p className="mb-4 text-justify text-xs opacity-90 md:text-base">
+                  {point.Description}
+                </p>
               </div>
 
               {/* Hover overlay */}
