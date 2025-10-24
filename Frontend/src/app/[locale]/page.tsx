@@ -53,7 +53,7 @@ const PointSelection = async ({
             <Link
               key={point.id}
               href={`/${locale}/${point.Slug}`}
-              className="group relative overflow-hidden rounded-2xl bg-gray-900 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              className="group relative overflow-hidden rounded-2xl bg-gray-900 transition-all duration-300 hover:scale-105 hover:shadow-xl"
             >
               <div className="relative h-[37vh] w-full md:h-[56vh]">
                 <Image
