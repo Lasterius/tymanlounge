@@ -74,11 +74,11 @@ const Home = async ({
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
           <div className="flex items-center justify-center gap-6 px-2">
             <Image src={'/LogoT.png'} alt="logo" width={200} height={200} className="w-1/4" />
-            <h1 className="font-main relative w-[40%] text-center text-base font-bold uppercase tracking-widest text-white sm:text-2xl lg:text-3xl xl:text-4xl">
+            <h1 className="font-h1 relative w-[40%] text-center text-base font-bold uppercase tracking-widest text-white sm:text-2xl lg:text-3xl xl:text-4xl">
               {h1_title}
             </h1>
           </div>
-          <h2 className="font-mainPicture relative mt-12 w-3/4 px-4 text-center text-xs font-bold uppercase tracking-widest text-white sm:text-sm lg:text-lg xl:text-xl">
+          <h2 className="font-h2 relative mt-12 w-[88%] px-4 lg:px-0 text-center text-xs font-bold uppercase tracking-[0.15em] text-white sm:text-sm lg:text-lg xl:text-xl">
             {h2_title}
           </h2>
           <ReserveButton

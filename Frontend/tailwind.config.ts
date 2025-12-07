@@ -15,6 +15,8 @@ const config: Config = {
       fontFamily: {
         heading: "var(--font-rubik)",
         mainPicture: "var(--font-eb-garamond)",
+        h1: "var(--font-cormorant-garamond)",
+        h2: "var(--font-montserrat)",
       },
     },
   },

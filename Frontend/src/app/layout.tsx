@@ -1,6 +1,6 @@
 import "@/shared/globals.css";
 import { GoogleTagManager } from "@/widgets";
-import { EB_Garamond, Roboto, Rubik_Mono_One } from "next/font/google";
+import { EB_Garamond, Roboto, Rubik_Mono_One, Cormorant_Garamond, Montserrat } from "next/font/google";
 import { ReactNode } from "react";
 
 const rubikMonoOne = Rubik_Mono_One({
@@ -20,6 +20,17 @@ const garamond = EB_Garamond({
   variable: "--font-eb-garamond",
 });
 
+const cormorantGaramond = Cormorant_Garamond({
+  weight: ["400", "700"],
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-cormorant-garamond",
+});
+
+const montserrat = Montserrat({
+  weight: ["400", "700"],
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-montserrat",
+});
 type Props = {
   children: ReactNode;
   params: { locale?: string };
@@ -34,7 +45,7 @@ export default function RootLayout({ children, params }: Props) {
   return (
     <html lang={lang}>
       <body
-        className={`${roboto.className} ${rubikMonoOne.variable} ${garamond.variable} flex min-h-screen flex-col text-base md:text-lg`}
+        className={`${roboto.className} ${rubikMonoOne.variable} ${garamond.variable} ${cormorantGaramond.variable} ${montserrat.variable} flex min-h-screen flex-col text-base md:text-lg`}
       >
         {/* Google Tag Manager (noscript) */}
         {process.env.NODE_ENV === "production" && (
