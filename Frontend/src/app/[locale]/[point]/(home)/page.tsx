@@ -1,6 +1,5 @@
 import { Link } from "@/i18n/routing";
 import { Button, ReserveButton } from "@/shared/ui";
-import { LogoBlackFull } from "@/shared/icons/LogoBlackFull";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { Metadata } from "next";
