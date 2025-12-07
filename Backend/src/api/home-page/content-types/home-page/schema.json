@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "mainDescription": {
+    "h2_title": {
       "type": "text",
       "pluginOptions": {
         "i18n": {
@@ -55,6 +55,15 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::point.point"
+    },
+    "h1_title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
     }
   }
 }

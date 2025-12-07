@@ -2,33 +2,30 @@
   "LocaleLayout": {
     "title": "Tyman Lounge & Bar"
   },
-
   "NotFoundPage": {
     "description": "Пожалуйста, проверьте адресную строку браузера или используйте навигацию, чтобы перейти на известную страницу",
     "title": "Страница не найдена"
   },
-
   "HomePage": {
-    "title": "Tyman Lounge & Bar",
+    "title": "Лучшая кальянная в Белграде на Воде — Tyman na Vodi — Кальян и коктейли",
+    "description": "Премиальные кальяны, коктейли и спокойная lounge-атмосфера в Белграде на Воде, рядом с Galerija. Tyman na Vodi — идеальное место для отдыха и приятного вечера.",
+    "OGTitle": "Tyman na Vodi - кальяны и коктейли в Белграде на Воде",
+    "OGDescription": "Премиальные кальяны, коктейли и спокойная lounge-атмосфера в Белграде на Воде, рядом с Galerija. Почувствуй атмосферу Tyman na Vodi.",
     "buttonRead": "Подробнее",
     "reserve": "Бронь",
     "reserveTable": "Забронировать стол",
     "menu": "Меню"
   },
-
   "AffichePage": {
     "buttonLoad": "Загрузить еще",
     "event": "Ближайшее событие"
   },
-
   "GalleryPage": {
     "title": "Галерея"
   },
-
   "TeamPage": {
     "title": "О нас"
   },
-
   "BurgerMenu": {
     "home": "Главная",
     "menu": "Меню",
@@ -36,12 +33,10 @@
     "gallery": "Галерея",
     "about": "О нас"
   },
-
   "Footer": {
     "weekdays": "Вс — Чт",
     "weekend": "Пт — Сб"
   },
-
   "PointSelection": {
     "selectLocation": "Выберите локацию",
     "waterfrontName": "Водный фронт",

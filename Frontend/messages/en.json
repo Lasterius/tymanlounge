@@ -2,33 +2,34 @@
   "LocaleLayout": {
     "title": "Tyman Lounge & Bar"
   },
-
   "NotFoundPage": {
     "description": "Please double-check the browser address bar or use the navigation to go to a known page",
     "title": "Page not found"
   },
-
   "HomePage": {
-    "title": "Tyman Lounge & Bar",
+    "titleWF": "Best Shisha Lounge Bar at Belgrade Waterfront — Tyman na Vodi — Hookah & Cocktails",
+    "descriptionWF": "Premium hookah, signature cocktails and a calm lounge atmosphere at Belgrade Waterfront, near Galerija. Tyman na Vodi is the perfect place to relax and enjoy your night out.",
+    "OGTitleWF": "Tyman na Vodi - Hookah & Cocktails at Belgrade Waterfront",
+    "OGDescriptionWF": "Premium hookah, signature cocktails and a calm lounge vibe at Belgrade Waterfront, right next to Galerija. Experience Tyman na Vodi.",
+    "titleDorcol": "Best Shisha Lounge Bar at Belgrade Dorcol — Tyman Lounge & Bar — Hookah & Cocktails",
+    "descriptionDorcol": "Premium hookah, signature cocktails and a calm lounge atmosphere at Belgrade Dorcol. Tyman Lounge & Bar is the perfect place to relax and enjoy your night out.",
+    "OGTitleDorcol": "Tyman Lounge & Bar - Hookah & Cocktails at Belgrade Dorcol",
+    "OGDescriptionDorcol": "Premium hookah, signature cocktails and a calm lounge vibe at Belgrade Dorcol. Experience Tyman Lounge & Bar.",
     "buttonRead": "Read More",
     "reserve": "Reserve",
     "reserveTable": "Reserve a table",
     "menu": "Menu"
   },
-
   "AffichePage": {
     "buttonLoad": "Load More",
     "event": "Upcoming event"
   },
-
   "GalleryPage": {
     "title": "Gallery"
   },
-
   "TeamPage": {
     "title": "About Us"
   },
-
   "BurgerMenu": {
     "home": "Home",
     "menu": "Menu",
@@ -36,12 +37,10 @@
     "gallery": "Gallery",
     "about": "About Us"
   },
-
   "Footer": {
     "weekdays": "Sun — Thu",
     "weekend": "Fri — Sat"
   },
-
   "PointSelection": {
     "selectLocation": "Select Location",
     "waterfrontName": "Waterfront",

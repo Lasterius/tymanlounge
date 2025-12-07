@@ -2,33 +2,30 @@
   "LocaleLayout": {
     "title": "Tyman Lounge & Bar"
   },
-
   "NotFoundPage": {
     "description": "Molimo vas da proverite adresnu traku pregledača ili koristite navigaciju da odete na poznatu stranicu",
     "title": "Stranica nije pronađena"
   },
-
   "HomePage": {
-    "title": "Tyman Lounge & Bar",
+    "title": "Najbolji nargila lounge bar u Beogradu na Vodi — Tyman na Vodi — Nargile i kokteli",
+    "description": "Premium nargile, kokteli i prijatna lounge atmosfera u Beogradu na Vodi, pored Galerije. Tyman na Vodi je idealno mesto za opuštanje i kvalitetan večernji provod.",
+    "OGTitle": "Tyman na Vodi - nargile i kokteli u Beogradu na Vodi",
+    "OGDescription": "Premium nargile, kokteli i prijatna lounge atmosfera u Beogradu na Vodi, tik uz Galeriju. Doživi Tyman na Vodi.",
     "buttonRead": "Više detalja",
     "reserve": "Rezervacija",
     "reserveTable": "Rezervišite sto",
     "menu": "Meni"
   },
-
   "AffichePage": {
     "buttonLoad": "Učitaj više",
     "event": "Predstojeći događaj"
   },
-
   "GalleryPage": {
     "title": "Galerija"
   },
-
   "TeamPage": {
     "title": "O nama"
   },
-
   "BurgerMenu": {
     "home": "Početna",
     "menu": "Meni",
@@ -36,12 +33,10 @@
     "gallery": "Galerija",
     "about": "O nama"
   },
-
   "Footer": {
     "weekdays": "Ned — Čet",
     "weekend": "Pet — Sub"
   },
-
   "PointSelection": {
     "selectLocation": "Izaberite lokaciju",
     "waterfrontName": "Vodni front",

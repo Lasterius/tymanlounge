@@ -32,7 +32,7 @@ export async function generateMetadata({
     robots: "index, follow",
     canonical: `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}`,
     keywords:
-      "russian shisha, hookah lounge Belgrade, best bar in Belgrade, Russian hookah, signature cocktails Belgrade, relaxing lounge in Belgrade, cozy bar, hookah bar in city center, Belgrade nightlife, bar for celebrations, unique drinks in Belgrade",
+      "russian shisha, hookah lounge Belgrade, Tyman na Vodi, Belgrade Waterfront, near Galerija, best bar in Belgrade, Best Shisha Lounge Bar, Russian hookah, signature cocktails Belgrade, relaxing lounge in Belgrade, cozy bar, hookah bar in city center, Belgrade nightlife, bar for celebrations, unique drinks in Belgrade",
     openGraph: {
       title: t("title"),
       description:

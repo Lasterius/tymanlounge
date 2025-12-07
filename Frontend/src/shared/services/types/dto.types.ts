@@ -88,7 +88,8 @@ export interface IAfficheItemDTO {
 }
 
 export interface IHomeDTO extends IGeneralDataDTO {
-  mainDescription: string;
+  h1_title: string;
+  h2_title: string;
   mainItem: IHomeMainItemDTO[];
   mainPicture: IPictureDTO;
 }

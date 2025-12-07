@@ -748,7 +748,7 @@ export interface ApiHomeCollectionHomeCollection
         };
       }>;
     point: Schema.Attribute.Relation<'manyToOne', 'api::point.point'>;
-    mainDescription: Schema.Attribute.Text &
+    h2_title: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -763,6 +763,13 @@ export interface ApiHomeCollectionHomeCollection
         };
       }>;
     mainItem: Schema.Attribute.Component<'shared.main-item', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    h1_title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -801,7 +808,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    mainDescription: Schema.Attribute.Text &
+    h2_title: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -823,6 +830,13 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         };
       }>;
     points: Schema.Attribute.Relation<'oneToMany', 'api::point.point'>;
+    h1_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

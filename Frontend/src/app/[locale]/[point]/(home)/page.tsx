@@ -29,12 +29,12 @@ export async function generateMetadata({
   const pointName = point === "waterfront" ? "Waterfront" : "Dorcol";
 
   return {
-    title: `${t("title")} - ${pointName} - Tyman Lounge & Bar`,
-    description: `Experience the ultimate hookah and cocktail lounge at Tyman Lounge & Bar in ${pointName}. Over 320 hookah blends and signature cocktails in the heart of Belgrade.`,
+    title: pointName === "Waterfront" ? t("titleWF") : t("titleDorcol"),
+    description: pointName === "Waterfront" ? t("descriptionWF") : t("descriptionDorcol"),
     keywords: `Tyman Lounge, ${pointName}, hookah bar Belgrade, Russian hookah, signature cocktails, lounge bar, Belgrade nightlife, premium hookah, cocktail bar`,
     openGraph: {
-      title: `${t("title")} - ${pointName} - Tyman Lounge & Bar`,
-      description: `Experience the ultimate hookah and cocktail lounge at Tyman Lounge & Bar in ${pointName}.`,
+      title: pointName === "Waterfront" ? t("titleWF") : t("titleDorcol"),
+      description: pointName === "Waterfront" ? t("descriptionWF") : t("descriptionDorcol"),
       type: "website",
       locale: locale,
     },
@@ -58,7 +58,7 @@ const Home = async ({
     getHomePageData(locale, actualPointSlug),
     getGlobalData(actualPointSlug),
   ]);
-  const { mainDescription, mainItem, mainPicture } = home;
+  const { h1_title, h2_title, mainItem, mainPicture } = home;
 
   return (
     <>
@@ -73,10 +73,15 @@ const Home = async ({
           loading="eager"
         />
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
-          <LogoBlackFull className="w-2/3 text-white" />
-          <p className="font-main relative mt-12 w-full px-4 text-center text-sm font-bold uppercase tracking-widest text-white sm:text-lg lg:text-xl xl:text-3xl">
-            {mainDescription}
-          </p>
+          <div className="flex items-center justify-center gap-6 px-2">
+            <Image src={'/LogoT.png'} alt="logo" width={200} height={200} className="w-1/4" />
+            <h1 className="font-main relative w-[40%] text-center text-base font-bold uppercase tracking-widest text-white sm:text-2xl lg:text-3xl xl:text-4xl">
+              {h1_title}
+            </h1>
+          </div>
+          <h2 className="font-mainPicture relative mt-12 w-3/4 px-4 text-center text-xs font-bold uppercase tracking-widest text-white sm:text-sm lg:text-lg xl:text-xl">
+            {h2_title}
+          </h2>
           <ReserveButton
             buttonText={t("reserve")}
             className="absolute bottom-32 w-2/4 text-lg max-sm:h-12 sm:h-14 md:hidden"

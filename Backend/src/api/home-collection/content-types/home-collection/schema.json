@@ -31,7 +31,7 @@
       "target": "api::point.point",
       "inversedBy": "home_collections"
     },
-    "mainDescription": {
+    "h2_title": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -64,6 +64,15 @@
         }
       },
       "component": "shared.main-item",
+      "required": true
+    },
+    "h1_title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
       "required": true
     }
   }
