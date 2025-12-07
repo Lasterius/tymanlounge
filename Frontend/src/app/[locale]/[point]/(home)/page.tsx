@@ -30,7 +30,7 @@ export async function generateMetadata({
   return {
     title: pointName === "Waterfront" ? t("titleWF") : t("titleDorcol"),
     description: pointName === "Waterfront" ? t("descriptionWF") : t("descriptionDorcol"),
-    keywords: `Tyman Lounge, ${pointName}, hookah bar Belgrade, Russian hookah, signature cocktails, lounge bar, Belgrade nightlife, premium hookah, cocktail bar`,
+    keywords: `nargila bar Beograd, nargile Beograd, nargila lounge bar, nargila Beograd na Vodi, kokteli Beograd, lounge atmosfera, Tyman na Vodi, shisha bar Belgrade, hookah Belgrade, premium hookah, signature cocktails, Belgrade Waterfront, lounge bar, cocktail bar, кальянная Белград, кальян Белград, Tyman na Vode, коктейли Белград, кальянная Белграде на Воде`,
     openGraph: {
       title: pointName === "Waterfront" ? t("titleWF") : t("titleDorcol"),
       description: pointName === "Waterfront" ? t("descriptionWF") : t("descriptionDorcol"),

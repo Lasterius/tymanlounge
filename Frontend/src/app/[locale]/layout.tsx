@@ -32,7 +32,7 @@ export async function generateMetadata({
     robots: "index, follow",
     canonical: `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}`,
     keywords:
-      "russian shisha, hookah lounge Belgrade, Tyman na Vodi, Belgrade Waterfront, near Galerija, best bar in Belgrade, Best Shisha Lounge Bar, Russian hookah, signature cocktails Belgrade, relaxing lounge in Belgrade, cozy bar, hookah bar in city center, Belgrade nightlife, bar for celebrations, unique drinks in Belgrade",
+      "nargila bar Beograd, nargile Beograd, nargila lounge bar, nargila Beograd na Vodi, kokteli Beograd, lounge atmosfera, Tyman na Vodi, shisha bar Belgrade, hookah Belgrade, premium hookah, signature cocktails, Belgrade Waterfront, lounge bar, cocktail bar, кальянная Белград, кальян Белград, Tyman na Vode, коктейли Белград, кальянная Белграде на Воде",
     openGraph: {
       title: t("title"),
       description:
