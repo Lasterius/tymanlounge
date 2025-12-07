@@ -7,10 +7,14 @@
     "title": "Stranica nije pronađena"
   },
   "HomePage": {
-    "title": "Najbolji nargila lounge bar u Beogradu na Vodi — Tyman na Vodi — Nargile i kokteli",
-    "description": "Premium nargile, kokteli i prijatna lounge atmosfera u Beogradu na Vodi, pored Galerije. Tyman na Vodi je idealno mesto za opuštanje i kvalitetan večernji provod.",
-    "OGTitle": "Tyman na Vodi - nargile i kokteli u Beogradu na Vodi",
-    "OGDescription": "Premium nargile, kokteli i prijatna lounge atmosfera u Beogradu na Vodi, tik uz Galeriju. Doživi Tyman na Vodi.",
+    "titleWF": "Najbolji nargila lounge bar u Beogradu na Vodi — Tyman na Vodi — Nargile i kokteli",
+    "descriptionWF": "Premium nargile, kokteli i prijatna lounge atmosfera u Beogradu na Vodi, pored Galerije. Tyman na Vodi je idealno mesto za opuštanje i kvalitetan večernji provod.",
+    "OGTitleWF": "Tyman na Vodi - nargile i kokteli u Beogradu na Vodi",
+    "OGDescriptionWF": "Premium nargile, kokteli i prijatna lounge atmosfera u Beogradu na Vodi, tik uz Galeriju. Doživi Tyman na Vodi.",
+    "titleDorcol": "Najbolji nargila lounge bar u Beogradu — Tyman Lounge & Bar — Nargile i kokteli",
+    "descriptionDorcol": "Premium nargile, kokteli i prijatna lounge atmosfera u Beogradu. Tyman Lounge & Bar je idealno mesto za opuštanje i kvalitetan večernji provod.",
+    "OGTitleDorcol": "Tyman Lounge & Bar - nargile i kokteli u Beogradu",
+    "OGDescriptionDorcol": "Premium nargile, kokteli i prijatna lounge atmosfera u Beogradu. Doživi Tyman Lounge & Bar.",
     "buttonRead": "Više detalja",
     "reserve": "Rezervacija",
     "reserveTable": "Rezervišite sto",
